@@ -1,0 +1,124 @@
+qvalues
+---------------
+State_key(percent_of_class=2, predict_proba=2, correct_predict=True, percent_duration=0, duration=0) 1 -5.672750588018335e-05 
+State_key(percent_of_class=4, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 1 0.0 
+State_key(percent_of_class=1, predict_proba=1, correct_predict=True, percent_duration=0, duration=1) 0 -0.0001660821362803671 
+State_key(percent_of_class=0, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 1 -0.00013440294808437993 
+State_key(percent_of_class=1, predict_proba=2, correct_predict=True, percent_duration=0, duration=0) 0 -0.00030064156542749057 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=False, percent_duration=0, duration=2) 1 -0.0033236778220210703 
+State_key(percent_of_class=3, predict_proba=1, correct_predict=True, percent_duration=0, duration=1) 0 -0.0008643755409718124 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=0) 0 2.7874282242400524e-05 
+State_key(percent_of_class=2, predict_proba=2, correct_predict=True, percent_duration=0, duration=1) 1 0.0003068115165026703 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 0 -0.0016608831937872525 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 0 -0.002032509087604057 
+State_key(percent_of_class=4, predict_proba=2, correct_predict=True, percent_duration=0, duration=2) 1 0.0002688783449867782 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 1 0.0 
+State_key(percent_of_class=0, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 0 -0.001094282132950497 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) 0 -0.005155620381259657 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) 0 -0.0005577284091323946 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) 1 0.0013385270816367195 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 0 -0.0006191753520420672 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=True, percent_duration=0, duration=1) 0 -0.0007521014744415033 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=6) 1 0.0005491303373009081 
+State_key(percent_of_class=1, predict_proba=1, correct_predict=True, percent_duration=0, duration=1) 1 -0.001688823498487374 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=6) 0 0.0 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=2) 0 0.0007696474334933867 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 1 0.0032274363973697553 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=3) 0 -0.0007175717855913463 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=2) 0 -0.0007192061739152476 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) 0 0.0008427910682572625 
+State_key(percent_of_class=4, predict_proba=3, correct_predict=True, percent_duration=0, duration=1) 0 3.896754422885889e-05 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=4) 1 -0.0003159839431859489 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=True, percent_duration=0, duration=1) 1 -0.0011924429984584428 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=3) 1 0.0 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=1) 1 0.0008188584757354807 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=False, percent_duration=0, duration=1) 0 0.0007728138945201357 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=False, percent_duration=0, duration=1) 1 0.0 
+State_key(percent_of_class=0, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) 0 -0.0006118381953905072 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=True, percent_duration=0, duration=0) 1 -0.0015244448743720275 
+State_key(percent_of_class=0, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) 1 0.0 
+State_key(percent_of_class=0, predict_proba=0, correct_predict=False, percent_duration=0, duration=2) 0 0.001274380668735762 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=True, percent_duration=0, duration=0) 0 0.0 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=False, percent_duration=0, duration=4) 1 0.0019651671456959014 
+State_key(percent_of_class=3, predict_proba=1, correct_predict=False, percent_duration=0, duration=1) 0 -0.0013487575364138943 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=True, percent_duration=0, duration=2) 0 -0.0015387809450836038 
+State_key(percent_of_class=3, predict_proba=1, correct_predict=False, percent_duration=0, duration=1) 1 0.0 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=True, percent_duration=0, duration=2) 1 0.0 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=3) 1 -0.0013742505565518233 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=1) 0 -0.0002739742963613401 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=False, percent_duration=0, duration=0) 0 0.0005492871719454863 
+State_key(percent_of_class=1, predict_proba=2, correct_predict=True, percent_duration=0, duration=1) 1 0.0006006370517181773 
+State_key(percent_of_class=1, predict_proba=2, correct_predict=True, percent_duration=0, duration=1) 0 0.0 
+State_key(percent_of_class=3, predict_proba=3, correct_predict=True, percent_duration=0, duration=1) 1 -0.0003046672657955829 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=2) 1 -0.000738749054052394 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=True, percent_duration=0, duration=1) 0 -0.00013577095763173675 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=1) 1 0.0008920437120683079 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=False, percent_duration=0, duration=2) 1 -0.0006829027241056839 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=0) 1 0.0012851791228051886 
+State_key(percent_of_class=3, predict_proba=3, correct_predict=True, percent_duration=0, duration=2) 0 -0.002505640212203059 
+State_key(percent_of_class=3, predict_proba=3, correct_predict=True, percent_duration=0, duration=1) 0 0.0016511025775168557 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=True, percent_duration=0, duration=1) 1 0.000643543286274399 
+State_key(percent_of_class=3, predict_proba=3, correct_predict=True, percent_duration=0, duration=0) 1 -0.0002150875881898937 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=False, percent_duration=0, duration=2) 1 0.0011510749076557626 
+State_key(percent_of_class=3, predict_proba=3, correct_predict=True, percent_duration=0, duration=0) 0 0.0 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) 1 0.0007618133834859877 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=False, percent_duration=0, duration=2) 0 0.0009731849155147215 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 1 -0.0008629801057150416 
+State_key(percent_of_class=2, predict_proba=3, correct_predict=True, percent_duration=0, duration=1) 1 5.551632009492269e-05 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=False, percent_duration=0, duration=2) 0 0.0 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=0) 0 0.0011042702833784245 
+State_key(percent_of_class=2, predict_proba=3, correct_predict=True, percent_duration=0, duration=1) 0 0.0 
+State_key(percent_of_class=3, predict_proba=1, correct_predict=True, percent_duration=0, duration=3) 0 0.0004990188863324144 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=5) 1 0.0011232077449551652 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=5) 0 0.0 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=0) 1 -0.0009962063889930033 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=True, percent_duration=0, duration=0) 1 -6.398380268114456e-05 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) 1 0.0002879465036700946 
+rewards
+---------------
+State_key(percent_of_class=2, predict_proba=2, correct_predict=True, percent_duration=0, duration=0) 0.004548505865290348 
+State_key(percent_of_class=1, predict_proba=1, correct_predict=True, percent_duration=0, duration=1) 0.000256821582403699 
+State_key(percent_of_class=0, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) 0.000847926408216737 
+State_key(percent_of_class=1, predict_proba=2, correct_predict=True, percent_duration=0, duration=0) -0.0005183539074820054 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=False, percent_duration=0, duration=2) -0.005904309366620009 
+State_key(percent_of_class=3, predict_proba=1, correct_predict=True, percent_duration=0, duration=1) -0.004321877704859062 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=0) -0.0002647134326600187 
+State_key(percent_of_class=2, predict_proba=2, correct_predict=True, percent_duration=0, duration=1) 0.005076853278440152 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) -0.004879258418998306 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) -0.007115593540905685 
+State_key(percent_of_class=4, predict_proba=2, correct_predict=True, percent_duration=0, duration=2) 0.001344391724933891 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) -0.00716469941340131 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) -0.0012212660023045163 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) 0.0054932163368606735 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=False, percent_duration=0, duration=1) -0.0003728469091229536 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=True, percent_duration=0, duration=1) -0.0029838252770639784 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=6) 0.0024864998332014554 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=2) 0.0012099265523885239 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=3) -0.008797342942906128 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=2) -0.004325500043335234 
+State_key(percent_of_class=4, predict_proba=3, correct_predict=True, percent_duration=0, duration=1) -0.0008013728259671782 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=4) -0.0010634850576784483 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=True, percent_duration=0, duration=1) -0.005962214992292214 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=1) 0.0069689273713473 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=False, percent_duration=0, duration=1) 0.0038640694726006786 
+State_key(percent_of_class=0, predict_proba=0, correct_predict=False, percent_duration=0, duration=0) -0.003059190976952536 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=True, percent_duration=0, duration=0) -0.007622224371860137 
+State_key(percent_of_class=0, predict_proba=0, correct_predict=False, percent_duration=0, duration=2) 0.00010469561819015372 
+State_key(percent_of_class=1, predict_proba=0, correct_predict=False, percent_duration=0, duration=4) 0.008415713990244558 
+State_key(percent_of_class=3, predict_proba=1, correct_predict=False, percent_duration=0, duration=1) -0.0067437876820694714 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=True, percent_duration=0, duration=2) -0.007693904725418019 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=3) -0.006871252782759116 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=1) -0.0013698714818067004 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=False, percent_duration=0, duration=0) 0.004950807327418372 
+State_key(percent_of_class=1, predict_proba=2, correct_predict=True, percent_duration=0, duration=1) 0.00367980769051518 
+State_key(percent_of_class=3, predict_proba=3, correct_predict=True, percent_duration=0, duration=1) -0.0015233363289779145 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=False, percent_duration=0, duration=2) -0.0029425726449269496 
+State_key(percent_of_class=3, predict_proba=2, correct_predict=True, percent_duration=0, duration=0) 0.006425895614025942 
+State_key(percent_of_class=3, predict_proba=3, correct_predict=True, percent_duration=0, duration=2) -0.012528201061015293 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=True, percent_duration=0, duration=1) 0.0012104621637364366 
+State_key(percent_of_class=3, predict_proba=3, correct_predict=True, percent_duration=0, duration=0) -0.0014949865247806393 
+State_key(percent_of_class=3, predict_proba=0, correct_predict=False, percent_duration=0, duration=2) 0.005037470211577355 
+State_key(percent_of_class=2, predict_proba=3, correct_predict=True, percent_duration=0, duration=1) 0.00027758160047461344 
+State_key(percent_of_class=3, predict_proba=1, correct_predict=True, percent_duration=0, duration=3) 0.001973469837742353 
+State_key(percent_of_class=2, predict_proba=1, correct_predict=True, percent_duration=0, duration=5) 0.0056160387247758264 
+State_key(percent_of_class=2, predict_proba=0, correct_predict=True, percent_duration=0, duration=0) -0.0003199190134057228 
