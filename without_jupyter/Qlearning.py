@@ -14,28 +14,31 @@ from tqdm import tqdm
 
 @dataclass
 class State_key:
-    percent_of_class : int  # 1e-2, 1e-1. 5e-1, 1, more than 1
-    predict_proba    : int  # 0-25, 25-50, 50-75, 75-100
-    correct_predict  : bool # True or False
-    percent_duration : int
-    # bytes_client     : int  # log3, 9 buckets
-    # bytes_server     : int  # log5, 7 buckets
-    duration         : int
+    percent_of_class     : int  # 1e-2, 1e-1. 5e-1, 1, more than 1
+    # predict_proba    : int  # 0-25, 25-50, 50-75, 75-100
+    # correct_predict  : bool # True or False
+    duration             : int  # 8 buckets
+    percent_duration     : int  # 5 buckets
+    bytes_client         : int  # log3, 9 buckets
+    bytes_server         : int  # log5, 7 buckets
+    ppi_duration         : int  # 6
+    ppi_percent_duration : int  # 5
 
     def __hash__(self):
         return self.percent_of_class + \
-               self.predict_proba * 5 + \
-               int(self.correct_predict) * 20 + \
+               self.duration * 5 + \
                self.percent_duration * 40 + \
-               self.duration * 320
-            #    self.bytes_client * 40 + \
-            #    self.bytes_server * 360 + \
-               
+               self.bytes_client * 200 + \
+               self.bytes_server * 1800 + \
+               self.ppi_duration * 12600 + \
+               self.ppi_percent_duration * 75600
+               # self.predict_proba * 5 + \
+               # int(self.correct_predict) * 20 + \
     
     def __eq__(self, other):
         if not isinstance(other, State_key) or self.__hash__() != other.__hash__():
             return False
-        
+
         return True
         # return self.percent_of_class == other.percent_of_class and \
         #        self.predict_proba == other.predict_proba and \
@@ -81,11 +84,18 @@ class Q(QLearning):
             q_df = q_df.sort_values(by=["q_value"], ascending=False)
             f.write(str(q_df.head()) + "\n\n")
 
-    def get_clf_prediction(self, index):
+    def get_clf_prediction(self, index, next_class):
 
+        res_index = np.where(self.clf.classes_ == next_class)
+        
         proba = self.clf.predict_proba(self.X[index].reshape(1, -1))[0]
         hit = (self.clf.predict(self.X[index].reshape(1, -1)) == self.y[index])[0]
 
+        if len(res_index[0]):
+            proba = proba[res_index[0][0]]
+        else:
+            proba = 0
+        
         return (proba, hit)
     
     def value_into_discrete(self, value, thresholds):
@@ -108,6 +118,12 @@ class Q(QLearning):
 
     def percent_duration_into_discrete(self, duration_percent):
         return self.value_into_discrete(duration_percent, self.DURATION_PERCENT_VALUES)
+    
+    def ppi_duration_into_discrete(self, duration):
+        return self.value_into_discrete(duration, self.PPI_DURATION_VALUES)
+    
+    def ppi_percent_duration_into_discrete(self, duration_percent):
+        return self.value_into_discrete(duration_percent, self.PPI_DURATION_PERCENT_VALUES)
             
     def client_bytes_into_discrete(self, nbytes):
         return int(np.clip(int(log(nbytes, 3)) - 5, 1, 9) - 1)
@@ -115,39 +131,38 @@ class Q(QLearning):
     def server_bytes_into_discrete(self, nbytes):
         return int(np.clip(int(log(nbytes, 5)) - 4, 0, 7))
 
-    def update_state(self, state_key, action_key, offset=0):
-        sample_index = self.base_i + self.t + 1 + offset
+    def update_state(self, state_key, action_key):
+        sample_index = self.base_i + self.t + 1
 
         next_class = self.y[sample_index]
-
-        if action_key == 1 and offset == 0:
-            prev_duration = self.duration_into_discrete(self.X_used[self.to_i - 1][94])
-
+        
+        prev_duration = self.duration_into_discrete(self.X_used[self.to_i - 1][94])
+        prev_ppi_duration = self.ppi_duration_into_discrete(self.X_used[self.to_i - 1][97])
+        
+        if action_key == 1:
             self.duration_amount[prev_duration] += 1
+            self.ppi_duration_amount[prev_ppi_duration] += 1
             self.class_amount[self.y_used[self.to_i - 1]] += 1
             self.used += 1
 
         class_percent = self.class_amount[next_class] / (self.used + self.base_samples)
-        
-        (proba, hit) = self.get_clf_prediction(sample_index)
 
-        res_index = np.where(self.clf.classes_ == next_class)
-        if len(res_index[0]):
-            proba = self.predict_proba_into_discrete(proba[res_index[0][0]])
-        else:
-            proba = 0
-
-        # client_bytes = self.client_bytes_into_discrete(X[sample_index][90])
-        # server_bytes = self.server_bytes_into_discrete(X[sample_index][91])
+        client_bytes = self.client_bytes_into_discrete(self.X[sample_index][90])
+        server_bytes = self.server_bytes_into_discrete(self.X[sample_index][91])
 
         duration = self.duration_into_discrete(self.X[sample_index][94])
         percent_duration = self.duration_amount[duration] / (self.used + self.base_samples)
 
+        ppi_duration = self.ppi_duration_into_discrete(self.X[sample_index][97])
+        ppi_percent_duration = self.ppi_duration_amount[ppi_duration] / (self.used + self.base_samples)
+
         return State_key(self.class_percent_into_discrete(class_percent), 
-                         proba,
-                         hit,
+                         duration,
                          self.percent_duration_into_discrete(percent_duration),
-                         duration)
+                         client_bytes,
+                         server_bytes,
+                         ppi_duration,
+                         self.ppi_percent_duration_into_discrete(ppi_percent_duration))
 
     def initialize(self, cols, iters, already_used, epsilon = 0.9, alpha = 0.2, gamma = 0.9):
         self.q_count = defaultdict(int)
@@ -156,18 +171,21 @@ class Q(QLearning):
         self.alpha_value         = alpha
         self.gamma_value         = gamma
 
-        self.CLASS_PERCENT_VALUES    = [0.0001, 0.01, 0.05, 0.1]
-        self.PREDICT_PROBA_VALUES    = [0.25, 0.50, 0.75]
-        self.DURATION_VALUES         = [0.1, 1, 29.9, 59.9, 89.9, 119.9, 299]
-        self.DURATION_PERCENT_VALUES = [0.05, 0.1, 0.2, 0.4]
+        self.CLASS_PERCENT_VALUES        = [0.0001, 0.01, 0.05, 0.1]
+        self.PREDICT_PROBA_VALUES        = [0.25, 0.50, 0.75]
+        self.DURATION_VALUES             = [0.1, 1, 29.9, 59.9, 89.9, 119.9, 299]
+        self.DURATION_PERCENT_VALUES     = [0.05, 0.1, 0.2, 0.4]
+        self.PPI_DURATION_VALUES         = [0.2, 9.9, 19.9, 70, 112]
+        self.PPI_DURATION_PERCENT_VALUES = [0.005, 0.01, 0.1, 0.4]
 
         self.used         = 0
         self.base_samples = already_used
         self.base_i       = already_used - 1
         self.to_i         = already_used
 
-        self.class_amount    = defaultdict(int)
-        self.duration_amount = defaultdict(int)
+        self.class_amount        = defaultdict(int)
+        self.duration_amount     = defaultdict(int)
+        self.ppi_duration_amount = defaultdict(int)
 
         self.X_used = np.ndarray(shape = (iters + already_used, cols))
         self.y_used = np.ndarray(shape = (iters + already_used,))
@@ -212,6 +230,8 @@ class Q(QLearning):
         return f1_score(self.y_test, predict_arr, average="weighted")
 
     def observe_reward_value(self, state_key, action_key):
+        (proba, hit) = self.get_clf_prediction(self.base_i + self.t, self.y[self.base_i + self.t])
+        
         self.X_used[self.to_i] = self.X[self.base_i + self.t]
         self.y_used[self.to_i] = self.y[self.base_i + self.t]
 
@@ -220,15 +240,20 @@ class Q(QLearning):
         cur_f1 = self.test_acc()
         reward = cur_f1 - self.last_f1
 
-        if action_key == 0:
-            self.to_i -= 1
-            reward = -reward
-        else:
-            self.last_f1 = cur_f1
+        proba_reward = (0.7 - proba)
+        hit_reward = -1 if hit == 1 else 1
 
         self.save_r_df(state_key, reward)
 
-        return reward
+        total_reward = (reward * 0.95 + proba_reward * 0.025 + hit_reward * 0.025)
+
+        if action_key == 0:
+            self.to_i -= 1
+            total_reward = -total_reward
+        else:
+            self.last_f1 = cur_f1
+        
+        return total_reward
 
     def learn(self, state_key, limit=1000, increased_rd = 1, decrease_alpha = 0):
         self.t = 1
