@@ -1,5 +1,9 @@
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import f1_score, accuracy_score
+try:
+    from sklearnex.ensemble import RandomForestClassifier
+    from sklearnex.metrics import f1_score, accuracy_score
+except ImportError:
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.metrics import f1_score, accuracy_score
 
 from pyqlearning.q_learning import QLearning
 

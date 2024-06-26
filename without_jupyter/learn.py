@@ -8,7 +8,7 @@ if __name__ == '__main__':
     ##### qlearning default params ######
     increased_rd = 500 # increased randomness for n iters
     decrease_alpha = 0.0001
-    iters = 101
+    iters = 100000
     base_samples_amount = 400
     epsilon = 0.9
     alpha = 0.2

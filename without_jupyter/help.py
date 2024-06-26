@@ -1,5 +1,9 @@
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
+try:
+    from sklearnex.ensemble import RandomForestClassifier
+    from sklearnex.metrics import accuracy_score
+except ImportError:
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.metrics import accuracy_score
 
 import numpy as np
 
