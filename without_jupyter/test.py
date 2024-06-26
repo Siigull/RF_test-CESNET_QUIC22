@@ -9,12 +9,17 @@ if __name__ == '__main__':
     parser.add_argument('-d', '--dataset',  type=str)
     parser.add_argument('-n', '--nclasses', type=int)
     parser.add_argument('-i', '--iters',    type=int)
+    parser.add_argument('-f', '--filename', type=str)
 
     args = parser.parse_args()
 
     nclasses = 10
     if args.nclasses != None:
         nclasses = args.nclasses
+
+    filename = "out_test.txt"
+    if args.filename != None:
+        filename = args.filename
 
     if args.dataset == None or parser.dataset == "QUIC":
         (train_dataframe, val_dataframe, test_dataframe) = QUIC_dataset(nclasses)
@@ -30,7 +35,7 @@ if __name__ == '__main__':
     iters = 700000
     nfeatures = X.shape[1]
 
-    q_tester = Qlearning_tester(iters, nfeatures)
+    q_tester = Qlearning_tester(iters, nfeatures, nclasses)
 
     q_tester.load_q_df("out_state.txt")
 

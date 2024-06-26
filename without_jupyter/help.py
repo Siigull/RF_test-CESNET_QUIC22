@@ -138,14 +138,16 @@ class Qlearning_tester():
     def calculate_centroid_size(self, cl, values):
         sum = 0
         for i in range(self.num_of_sizes):
-            sum += self.calculate_distance(self.class_size_sums[cl][i], values[i + 60], self.to_i)
+            sum += self.calculate_distance(self.class_size_sums[cl][i], values[i + 60], self.cur_i)
 
         return sum / self.num_of_sizes
 
-    def __init__(self, iters, nfeatures):
+    def __init__(self, iters, nfeatures, nclasses):
         self.pattern = re.compile(r"State_key\((.*?)\) (\d) ([\d\.\-e]+)")
         self.pattern_q = re.compile("qvalues")
         self.pattern_r = re.compile("rewards")
+
+        self.m_depth = 15
 
         self.state_action = {}
         self.cur_state = {}
@@ -154,7 +156,12 @@ class Qlearning_tester():
         self.ppi_duration_amount = defaultdict(int)
         self.class_amount = defaultdict(int)
 
-        self.CLASS_PERCENT_VALUES        = [0.0001, 0.01, 0.05, 0.1]
+        if nclasses < 25:
+            self.CLASS_PERCENT_VALUES    = [0.01, 0.05, 0.1, 0.2]
+        else:
+            self.CLASS_PERCENT_VALUES    = [0.001, 0.01, 0.05, 0.1]
+
+        # self.CLASS_PERCENT_VALUES        = [0.01, 0.05, 0.1, 0.2]
         # self.PREDICT_PROBA_VALUES        = [0.25, 0.50, 0.75]
         self.DURATION_VALUES             = [0.1, 1, 29.9, 59.9, 89.9, 119.9, 299]
         self.DURATION_PERCENT_VALUES     = [0.05, 0.1, 0.2, 0.4]
@@ -285,34 +292,34 @@ class Qlearning_tester():
             else:
                 self.last_action = 0
 
-    def test_acc(self, iters, X_test, y_test):
-        print(str(self.cur_i) + "/" + str(iters))
-        
-        clf = RandomForestClassifier(max_depth=10, n_jobs=-1)
-        clf.fit(self.X[:self.cur_i], self.y[:self.cur_i])
-        
-        predict_arr = clf.predict(X_test)
-        
-        print(f"q_learning_acc: {accuracy_score(y_test, predict_arr):.4f}" + "\n")
-
-        val = 0
-        for i in range(3):
-            clf = RandomForestClassifier(max_depth=10, n_jobs=-1)
-            indices = np.random.choice(iters, self.cur_i, replace=False)
-    
-            clf.fit(self.X[indices], self.y[indices])
+    def test_acc(self, iters, X_test, y_test, filename = "out_test.txt"):
+        with open(filename, "a") as f:
+            print(str(self.cur_i) + "/" + str(iters))
             
-            predict_arr = clf.predict(X_test)
-
-            val += accuracy_score(y_test, predict_arr)
-
-        val /= 3
-        print(f"random_learning_acc: {val:.4f}" + "\n")
+            clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
+            clf.fit(self.X_used[:self.to_i], self.y_used[:self.to_i])
+            
+            predict_arr = clf.predict(self.X_big_test)
+            
+            f.write(f"q_learning_acc: {accuracy_score(self.y_big_test, predict_arr):.4f}" + "\n")
+            
+            val = 0
+            for _ in range(3):
+                clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
+                indices = np.random.choice(self.base_samples + self.t, self.to_i, replace=False)
         
+                clf.fit(self.X[indices], self.y[indices])
+                
+                predict_arr = clf.predict(self.X_big_test)
 
-        clf = RandomForestClassifier(max_depth=10, n_jobs=-1)
-        clf.fit(self.X[:iters], self.y[:iters])
-        
-        predict_arr = clf.predict(X_test)
-        
-        print(f"total_learning_acc: {accuracy_score(y_test, predict_arr):.4f}" + "\n")
+                val += accuracy_score(self.y_big_test, predict_arr)
+
+            val /= 3
+            f.write(f"random_learning_acc: {val:.4f}" + "\n")
+            
+            clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
+            clf.fit(self.X[:self.base_samples + self.t], self.y[:self.base_samples + self.t])
+            
+            predict_arr = clf.predict(self.X_big_test)
+            
+            f.write(f"total_learning_acc: {accuracy_score(self.y_big_test, predict_arr):.4f}" + "\n")

@@ -2,6 +2,7 @@ from Qlearning import State_key, Q, used_features
 from help import QUIC_dataset, TLS_dataset, Qlearning_tester, create_balanced_test_data
 
 import argparse
+from datetime import now
 
 if __name__ == '__main__':
     ##### qlearning default params ######
@@ -13,6 +14,7 @@ if __name__ == '__main__':
     alpha = 0.2
     gamma = 0.95
     nclasses = 10
+    batches = 100
     #####################################
 
     parser = argparse.ArgumentParser()
@@ -24,6 +26,7 @@ if __name__ == '__main__':
     parser.add_argument('-e', '--epsilon',  type=float)
     parser.add_argument('-i', '--iters',    type=int)
     parser.add_argument('-f', '--features', type=str)
+    parser.add_argument('-b', '--batches',  type=int)
 
     args = parser.parse_args()
 
@@ -41,6 +44,9 @@ if __name__ == '__main__':
 
     if args.iters != None:
         iters = args.iters
+
+    if args.batches != None:
+        batches = args.batches
 
     if args.features != None:
         features = [int(item) for item in args.features.split(',')]
@@ -62,7 +68,7 @@ if __name__ == '__main__':
     q.y = train_dataframe["APP"].to_numpy()
 
     q.X_big_test = test_dataframe.drop(columns="APP").to_numpy()[:100000]
-    q.y_big_test = test_dataframe["APP"].to_numpy()[:10000]
+    q.y_big_test = test_dataframe["APP"].to_numpy()[:100000]
 
     nfeatures = q.X.shape[1]
 
@@ -71,6 +77,10 @@ if __name__ == '__main__':
     q.initialize(nfeatures, iters, base_samples_amount, epsilon, alpha, gamma)
 
     state_key = q.update_state(State_key(0, 0, 0, 0, 0, 0, 0, 0), 0)
-    q.learn(state_key, 100, iters, increased_rd)
+    q.learn(state_key, batches, iters, increased_rd)
 
-    q.save_table_to_file()
+    # time = str(now().strftime('%Y-%m-%d%H:%M:%S'))
+
+    q.big_test("out_acc[batches=" + str(batches) + "].txt")
+
+    q.save_table_to_file("out_state[batches=" + str(batches) + "].txt")

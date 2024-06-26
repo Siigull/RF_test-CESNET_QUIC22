@@ -56,9 +56,9 @@ class State_key:
         return True
         
 class Q(QLearning):
-    def big_test(self):
-        with open("out.txt", "a") as f:
-            f.write(str(self.to_i) + "\n")
+    def big_test(self, path = "out.txt"):
+        with open(path, "a") as f:
+            f.write(str(self.to_i) + "/" + str(self.t + self.base_samples))
             
             clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
             clf.fit(self.X_used[:self.to_i], self.y_used[:self.to_i])
@@ -204,9 +204,13 @@ class Q(QLearning):
         self.alpha_value         = alpha
         self.gamma_value         = gamma
 
-        self.m_depth = 10
+        self.m_depth = 15
 
-        self.CLASS_PERCENT_VALUES        = [0.0001, 0.01, 0.05, 0.1]
+        if nclasses < 25:
+            self.CLASS_PERCENT_VALUES    = [0.01, 0.05, 0.1, 0.2]
+        else:
+            self.CLASS_PERCENT_VALUES    = [0.001, 0.01, 0.05, 0.1]
+
         self.PREDICT_PROBA_VALUES        = [0.25, 0.50, 0.75]
         self.DURATION_VALUES             = [0.1, 1, 29.9, 59.9, 89.9, 119.9, 299]
         self.DURATION_PERCENT_VALUES     = [0.05, 0.1, 0.2, 0.4]
