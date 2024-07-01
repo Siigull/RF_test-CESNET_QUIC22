@@ -1,6 +1,6 @@
 try:
     from sklearnex.ensemble import RandomForestClassifier
-    from sklearnex.metrics import accuracy_score
+    from sklearn.metrics import accuracy_score
 except ImportError:
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score
@@ -124,6 +124,15 @@ class Qlearning_tester():
     
     def centroid_size_into_discrete(self, size):
         return self.value_into_discrete(size, self.CENTROID_SIZE_VALUES)
+    
+    def centroid_ipt_into_discrete(self, ipt):
+        return self.value_into_discrete(ipt, self.CENTROID_IPT_VALUES)
+    
+    def centroid_bytes_into_discrete(self, bytes):
+        return self.value_into_discrete(bytes, self.CENTROID_BYTES_VALUES)
+    
+    def centroid_roundtrip_into_discrete(self, trips):
+        return self.value_into_discrete(trips, self.CENTROID_ROUNDTRIP_VALUES)
             
     def client_bytes_into_discrete(self, nbytes):
         return int(np.clip(int(log(nbytes, 3)) - 5, 1, 9) - 1)
@@ -142,9 +151,30 @@ class Qlearning_tester():
     def calculate_centroid_size(self, cl, values):
         sum = 0
         for i in range(self.num_of_sizes):
-            sum += self.calculate_distance(self.class_size_sums[cl][i], values[i + 60], self.cur_i)
+            sum += self.calculate_distance(self.class_size_sums[cl][i], values[i + 60], self.to_i)
 
-        return sum / self.num_of_sizes
+        return self.centroid_size_into_discrete(sum / self.num_of_sizes)
+
+    def calculate_centroid_ipt(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_ipts):
+            sum += self.calculate_distance(self.class_ipt_sums[cl][i], values[i], self.to_i)
+
+        return self.centroid_ipt_into_discrete(sum / self.num_of_ipts)
+    
+    def calculate_centroid_bytes(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_bytes):
+            sum += self.calculate_distance(self.class_bytes_sums[cl][i], values[i + 90], self.to_i)
+
+        return self.centroid_bytes_into_discrete(sum / self.num_of_bytes)
+
+    def calculate_centroid_roundtrip(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_roundtrips):
+            sum += self.calculate_distance(self.class_roundtrip_sums[cl][i], values[i + 96], self.to_i)
+
+        return self.centroid_roundtrip_into_discrete(sum / self.num_of_roundtrips)
 
     def __init__(self, iters, nfeatures, nclasses):
         self.pattern = re.compile(r"State_key\((.*?)\) (\d) ([\d\.\-e]+)")
@@ -165,31 +195,50 @@ class Qlearning_tester():
         else:
             self.CLASS_PERCENT_VALUES    = [0.001, 0.01, 0.05, 0.1]
 
-        # self.CLASS_PERCENT_VALUES        = [0.01, 0.05, 0.1, 0.2]
-        # self.PREDICT_PROBA_VALUES        = [0.25, 0.50, 0.75]
         self.DURATION_VALUES             = [0.1, 1, 29.9, 59.9, 89.9, 119.9, 299]
         self.DURATION_PERCENT_VALUES     = [0.05, 0.1, 0.2, 0.4]
         self.PPI_DURATION_VALUES         = [0.2, 9.9, 19.9, 70, 112]
         self.PPI_DURATION_PERCENT_VALUES = [0.005, 0.01, 0.1, 0.4]
         self.CENTROID_SIZE_VALUES        = [300, 500, 800]
+        self.CENTROID_IPT_VALUES         = [2, 4, 10]
+        self.CENTROID_BYTES_VALUES       = [2500, 5000, 9000]
+        self.CENTROID_ROUNDTRIP_VALUES   = [2, 4, 6]
         self.used = 1
 
         self.X_used = np.ndarray(shape=(iters, nfeatures))
         self.y_used = np.ndarray(shape=(iters,))
-        self.cur_i = 0
+        self.to_i = 0
 
         self.num_of_sizes = 12
+        self.num_of_ipts = 10
+        self.num_of_bytes = 1
+        self.num_of_roundtrips = 1
 
         self.class_size_sums = {}
+        self.class_ipt_sums = {}
+        self.class_bytes_sums = {}
+        self.class_roundtrip_sums = {}
         for class_i in range(200):
+            self.class_ipt_sums[class_i] = []
             self.class_size_sums[class_i] = []
+            self.class_bytes_sums[class_i] = []
+            self.class_roundtrip_sums[class_i] = []
+
+            for _ in range(self.num_of_roundtrips):
+                self.class_roundtrip_sums[class_i].append(0)
+
+            for _ in range(self.num_of_bytes):
+                self.class_bytes_sums[class_i].append(0)
+
+            for _ in range(self.num_of_ipts):
+                self.class_ipt_sums[class_i].append(0)
+
             for _ in range(self.num_of_sizes):
                 self.class_size_sums[class_i].append(0)
 
         self.last_action = 0
 
         self.used_state = None
-
 
     def parse_single_q(self, state, action, value):
         state_key_parts = state.split(', ')
@@ -208,7 +257,6 @@ class Qlearning_tester():
         if key not in self.state_action or \
            self.state_action[key][1] < value:
                 self.state_action[key] = [action, value]
-
 
     def load_q_df(self, file_path):
         state = 0
@@ -240,8 +288,17 @@ class Qlearning_tester():
             prev_ppi_duration = self.cur_state["ppi_duration"]
             prev_class = self.y[index - 1]
 
+            for i in range(self.num_of_roundtrips):
+                self.class_roundtrip_sums[prev_class][i] = self.X_used[self.to_i - 1][i + 96]
+
+            for i in range(self.num_of_bytes):
+                self.class_bytes_sums[prev_class][i] = self.X_used[self.to_i - 1][i + 90]
+
+            for i in range(self.num_of_ipts):
+                self.class_ipt_sums[prev_class][i] = self.X_used[self.to_i - 1][i]
+
             for i in range(self.num_of_sizes):
-                self.class_size_sums[prev_class][i] = self.X_used[self.cur_i - 1][i + 60]
+                self.class_size_sums[prev_class][i] = self.X_used[self.to_i - 1][i + 60]
 
             self.duration_amount[prev_duration] += 1
             self.ppi_duration_amount[prev_ppi_duration] += 1
@@ -250,7 +307,7 @@ class Qlearning_tester():
 
         self.cur_state["percent_of_class"] \
             = self.class_percent_into_discrete(self.class_amount[next_class] / self.used)
-        
+
         self.cur_state["bytes_client"] = self.client_bytes_into_discrete(self.X[index][90])
         self.cur_state["bytes_server"] = self.server_bytes_into_discrete(self.X[index][91])
 
@@ -263,6 +320,9 @@ class Qlearning_tester():
         self.cur_state["ppi_percent_duration"] = self.ppi_percent_duration_into_discrete(ppi_duration_percent)
 
         self.cur_state["centroid_size"] = self.calculate_centroid_size(next_class, self.X[index])
+        self.cur_state["centroid_ipt"] = self.calculate_centroid_ipt(next_class, self.X[index])
+        self.cur_state["centroid_bytes"] = self.calculate_centroid_bytes(next_class, self.X[index])
+        self.cur_state["centroid_roundtrip"] = self.calculate_centroid_roundtrip(next_class, self.X[index])
 
     def state_to_key(self):
         key = ""
@@ -286,10 +346,10 @@ class Qlearning_tester():
             self.update_state(index)
 
             if self.isTake() == 1:
-                self.X_used[self.cur_i] = el
-                self.y_used[self.cur_i] = self.y[index]
+                self.X_used[self.to_i] = el
+                self.y_used[self.to_i] = self.y[index]
 
-                self.cur_i += 1
+                self.to_i += 1
 
                 self.last_action = 1
 
@@ -298,32 +358,32 @@ class Qlearning_tester():
 
     def test_acc(self, iters, X_test, y_test, filename = "out_test.txt"):
         with open(filename, "a") as f:
-            print(str(self.cur_i) + "/" + str(iters))
+            print(str(self.to_i) + "/" + str(iters))
             
             clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
             clf.fit(self.X_used[:self.to_i], self.y_used[:self.to_i])
-            
-            predict_arr = clf.predict(self.X_big_test)
-            
-            f.write(f"q_learning_acc: {accuracy_score(self.y_big_test, predict_arr):.4f}" + "\n")
-            
+
+            predict_arr = clf.predict(X_test)
+
+            f.write(f"q_learning_acc: {accuracy_score(y_test, predict_arr):.4f}" + "\n")
+
             val = 0
             for _ in range(3):
                 clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
-                indices = np.random.choice(self.base_samples + self.t, self.to_i, replace=False)
+                indices = np.random.choice(iters, self.to_i, replace=False)
         
                 clf.fit(self.X[indices], self.y[indices])
                 
-                predict_arr = clf.predict(self.X_big_test)
+                predict_arr = clf.predict(X_test)
 
-                val += accuracy_score(self.y_big_test, predict_arr)
+                val += accuracy_score(y_test, predict_arr)
 
             val /= 3
             f.write(f"random_learning_acc: {val:.4f}" + "\n")
             
             clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
-            clf.fit(self.X[:self.base_samples + self.t], self.y[:self.base_samples + self.t])
-            
-            predict_arr = clf.predict(self.X_big_test)
-            
-            f.write(f"total_learning_acc: {accuracy_score(self.y_big_test, predict_arr):.4f}" + "\n")
+            clf.fit(self.X[:iters], self.y[:iters])
+
+            predict_arr = clf.predict(X_test)
+
+            f.write(f"total_learning_acc: {accuracy_score(y_test, predict_arr):.4f}" + "\n")

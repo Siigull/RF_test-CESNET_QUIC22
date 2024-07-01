@@ -2,7 +2,7 @@ from Qlearning import State_key, Q, used_features
 from help import QUIC_dataset, TLS_dataset, Qlearning_tester, create_balanced_test_data
 
 import argparse
-from datetime import now
+from datetime import datetime
 
 if __name__ == '__main__':
     ##### qlearning default params ######
@@ -76,10 +76,10 @@ if __name__ == '__main__':
 
     q.initialize(nfeatures, iters, base_samples_amount, epsilon, alpha, gamma)
 
-    state_key = q.update_state(State_key(0, 0, 0, 0, 0, 0, 0, 0), 0)
+    state_key = q.update_state(State_key(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 0)
     q.learn(state_key, batches, iters, increased_rd)
 
-    # time = str(now().strftime('%Y-%m-%d%H:%M:%S'))
+    # time = str(datetime.now().strftime('%Y-%m-%d%H:%M:%S'))
 
     q.big_test("out_acc[batches=" + str(batches) + "].txt")
 

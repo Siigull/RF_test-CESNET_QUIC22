@@ -1,6 +1,6 @@
 try:
     from sklearnex.ensemble import RandomForestClassifier
-    from sklearnex.metrics import f1_score, accuracy_score
+    from sklearn.metrics import f1_score, accuracy_score
 except ImportError:
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import f1_score, accuracy_score
@@ -16,8 +16,8 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-used_features  = [1, 1, 1, 1, 1, 1, 1, 1]
-classes_amount = [5, 8, 5, 9, 7, 6, 5, 4]
+used_features  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+classes_amount = [5, 8, 5, 9, 7, 6, 5, 4, 4, 4, 4, 4]
 
 @dataclass
 class State_key:
@@ -28,7 +28,11 @@ class State_key:
     bytes_server         : int # log5, 7 buckets
     ppi_duration         : int # 6
     ppi_percent_duration : int # 5
-    centroid_size        : int # 4
+    centroid_size1       : int # 4
+    centroid_size2       : int # 4
+    centroid_ipt         : int # 4
+    centroid_bytes       : int # 4
+    centroid_roundtrip   : int # 4
 
     def write(self):
         ret = "State_key("
@@ -44,15 +48,20 @@ class State_key:
         return ret
 
     def __hash__(self):
-        value = 0
-        multiplier = 1
-        for index, el in enumerate(asdict(self).values()):
-            if used_features[index]:
-                value += el * multiplier
-                multiplier *= classes_amount[index]
+        try:
+            return self.hash
+        except:
+            value = 0
+            multiplier = 1
+            for index, field in enumerate(self.__dataclass_fields__):
+                if used_features[index]:
+                    value += getattr(self, field) * multiplier
+                    multiplier *= classes_amount[index]
 
-        return value
-    
+            self.hash = value
+
+            return value
+
     def __eq__(self, other):
         if not isinstance(other, State_key) or self.__hash__() != other.__hash__():
             return False
@@ -70,7 +79,7 @@ class Q(QLearning):
             predict_arr = clf.predict(self.X_big_test)
             
             f.write(f"q_learning_acc: {accuracy_score(self.y_big_test, predict_arr):.4f}" + "\n")
-            
+
             val = 0
             for _ in range(3):
                 clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
@@ -109,7 +118,7 @@ class Q(QLearning):
             proba = 0
         
         return (proba, hit)
-    
+
     def value_into_discrete(self, value, thresholds):
         for i, threshold in enumerate(thresholds):
             if value < threshold:
@@ -139,13 +148,28 @@ class Q(QLearning):
             
     def centroid_size_into_discrete(self, size):
         return self.value_into_discrete(size, self.CENTROID_SIZE_VALUES)
+    
+    def centroid_size_into_discrete1(self, size):
+        return self.value_into_discrete(size, self.CENTROID_SIZE_VALUES1)
+    
+    def centroid_size_into_discrete2(self, size):
+        return self.value_into_discrete(size, self.CENTROID_SIZE_VALUES2)
+    
+    def centroid_ipt_into_discrete(self, ipt):
+        return self.value_into_discrete(ipt, self.CENTROID_IPT_VALUES)
+    
+    def centroid_bytes_into_discrete(self, bytes):
+        return self.value_into_discrete(bytes, self.CENTROID_BYTES_VALUES)
+
+    def centroid_roundtrip_into_discrete(self, trips):
+        return self.value_into_discrete(trips, self.CENTROID_ROUNDTRIP_VALUES)
 
     def client_bytes_into_discrete(self, nbytes):
         return int(np.clip(int(log(nbytes, 3)) - 5, 1, 9) - 1)
     
     def server_bytes_into_discrete(self, nbytes):
         return int(np.clip(int(log(nbytes, 5)) - 4, 0, 7))
-    
+
     def calculate_distance(self, sum, value, n):
         if n == 0:
             return value
@@ -160,19 +184,66 @@ class Q(QLearning):
             sum += self.calculate_distance(self.class_size_sums[cl][i], values[i + 60], self.to_i)
 
         return sum / self.num_of_sizes
+    
+    def calculate_centroid_size1(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_sizes1):
+            sum += self.calculate_distance(self.class_size_sums1[cl][i], values[i + 60], self.to_i)
+
+        return sum / self.num_of_sizes1
+    
+    def calculate_centroid_size2(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_sizes2):
+            sum += self.calculate_distance(self.class_size_sums2[cl][i], values[i + 66], self.to_i)
+
+        return sum / self.num_of_sizes2
+
+    def calculate_centroid_ipt(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_ipts):
+            sum += self.calculate_distance(self.class_ipt_sums[cl][i], values[i], self.to_i)
+
+        return sum / self.num_of_ipts
+    
+    def calculate_centroid_bytes(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_bytes):
+            sum += self.calculate_distance(self.class_bytes_sums[cl][i], values[i + 90], self.to_i)
+
+        return sum / self.num_of_bytes
+
+    def calculate_centroid_roundtrip(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_roundtrips):
+            sum += self.calculate_distance(self.class_roundtrip_sums[cl][i], values[i + 96], self.to_i)
+
+        return sum / self.num_of_roundtrips
 
     def update_state(self, state_key, action_key):
         sample_index = self.base_i + self.t + 1
 
         next_class = self.y[sample_index]
-        
+
         if action_key == 1:
             prev_duration = self.duration_into_discrete(self.X_used[self.to_i - 1][94])
             prev_ppi_duration = self.ppi_duration_into_discrete(self.X_used[self.to_i - 1][97])
             prev_class = self.y_used[self.to_i - 1]
 
-            for i in range(self.num_of_sizes):
-                self.class_size_sums[prev_class][i] = self.X_used[self.to_i - 1][i + 60]
+            for i in range(self.num_of_roundtrips):
+                self.class_roundtrip_sums[prev_class][i] = self.X_used[self.to_i - 1][i + 96]
+
+            for i in range(self.num_of_bytes):
+                self.class_bytes_sums[prev_class][i] = self.X_used[self.to_i - 1][i + 90]
+
+            for i in range(self.num_of_ipts):
+                self.class_ipt_sums[prev_class][i] = self.X_used[self.to_i - 1][i]
+
+            for i in range(self.num_of_sizes1):
+                self.class_size_sums1[prev_class][i] = self.X_used[self.to_i - 1][i + 60]
+
+            for i in range(self.num_of_sizes2):
+                self.class_size_sums2[prev_class][i] = self.X_used[self.to_i - 1][i + 66]
 
             self.duration_amount[prev_duration] += 1
             self.ppi_duration_amount[prev_ppi_duration] += 1
@@ -190,7 +261,11 @@ class Q(QLearning):
         ppi_duration = self.ppi_duration_into_discrete(self.X[sample_index][97])
         ppi_percent_duration = self.ppi_duration_amount[ppi_duration] / (self.used + self.base_samples)
 
-        centroid_size = self.calculate_centroid_size(next_class, self.X[sample_index])
+        centroid_size1 = self.calculate_centroid_size1(next_class, self.X[sample_index])
+        centroid_size2 = self.calculate_centroid_size2(next_class, self.X[sample_index])
+        centroid_ipt = self.calculate_centroid_ipt(next_class, self.X[sample_index])
+        centroid_bytes = self.calculate_centroid_bytes(next_class, self.X[sample_index])
+        centroid_roundtrip = self.calculate_centroid_roundtrip(next_class, self.X[sample_index])
 
         return State_key(self.class_percent_into_discrete(class_percent), 
                          duration,
@@ -199,7 +274,11 @@ class Q(QLearning):
                          server_bytes,
                          ppi_duration,
                          self.ppi_percent_duration_into_discrete(ppi_percent_duration),
-                         self.centroid_size_into_discrete(centroid_size))
+                         self.centroid_size_into_discrete1(centroid_size1),
+                         self.centroid_size_into_discrete2(centroid_size2),
+                         self.centroid_ipt_into_discrete(centroid_ipt),
+                         self.centroid_bytes_into_discrete(centroid_bytes),
+                         self.centroid_roundtrip_into_discrete(centroid_roundtrip))
 
     def initialize(self, cols, iters, already_used, nclasses, epsilon = 0.9, alpha = 0.2, gamma = 0.9):
         self.q_count = defaultdict(int)
@@ -221,6 +300,11 @@ class Q(QLearning):
         self.PPI_DURATION_VALUES         = [0.2, 9.9, 19.9, 70, 112]
         self.PPI_DURATION_PERCENT_VALUES = [0.005, 0.01, 0.1, 0.4]
         self.CENTROID_SIZE_VALUES        = [300, 500, 800]
+        self.CENTROID_SIZE_VALUES1       = [550, 700, 950]
+        self.CENTROID_SIZE_VALUES2       = [50, 200, 400]
+        self.CENTROID_IPT_VALUES         = [2, 4, 10]
+        self.CENTROID_BYTES_VALUES       = [2500, 5000, 9000]
+        self.CENTROID_ROUNDTRIP_VALUES   = [2, 4, 6]
 
         self.used         = 0
         self.base_samples = already_used
@@ -242,13 +326,38 @@ class Q(QLearning):
         self.clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
         self.last_f1 = self.test_acc()
         
-        self.num_of_sizes = 12
+        self.num_of_sizes1 = 6
+        self.num_of_sizes2 = 6
+        self.num_of_ipts = 10
+        self.num_of_bytes = 1
+        self.num_of_roundtrips = 1
 
-        self.class_size_sums = {}
+        self.class_size_sums1 = {}
+        self.class_size_sums2 = {}
+        self.class_ipt_sums = {}
+        self.class_bytes_sums = {}
+        self.class_roundtrip_sums = {}
         for class_i in range(200):
-            self.class_size_sums[class_i] = []
-            for _ in range(self.num_of_sizes):
-                self.class_size_sums[class_i].append(0)
+            self.class_ipt_sums[class_i] = []
+            self.class_size_sums1[class_i] = []
+            self.class_size_sums2[class_i] = []
+            self.class_bytes_sums[class_i] = []
+            self.class_roundtrip_sums[class_i] = []
+
+            for _ in range(self.num_of_roundtrips):
+                self.class_roundtrip_sums[class_i].append(0)
+
+            for _ in range(self.num_of_bytes):
+                self.class_bytes_sums[class_i].append(0)
+
+            for _ in range(self.num_of_ipts):
+                self.class_ipt_sums[class_i].append(0)
+
+            for _ in range(self.num_of_sizes1):
+                self.class_size_sums1[class_i].append(0)
+
+            for _ in range(self.num_of_sizes2):
+                self.class_size_sums2[class_i].append(0)
 
         for i in range(self.base_samples):
             self.class_amount[self.y[i]] += 1
@@ -295,7 +404,7 @@ class Q(QLearning):
     def observe_hit_reward(self, action_key):
         (proba, hit) = self.get_clf_prediction(self.base_i + self.t, self.y[self.base_i + self.t])
 
-        proba_reward = (0.7 - proba)
+        proba_reward = (0.5 - proba)
         hit_reward = -1 if hit == 1 else 1
 
         if action_key == 1:
@@ -312,7 +421,7 @@ class Q(QLearning):
         seen_states = []
 
         for _ in tqdm(range(1, limit + 1)):
-            if self.t - last_t > 999:
+            if self.t - last_t > 4999:
                 self.big_test()
                 last_t = self.t
 
@@ -353,8 +462,8 @@ class Q(QLearning):
                     #                      0.95 0.025 0.025
                     #
                     # This one worked best 0.97 0.015 0.015
-                    # For a subset of 10 classes 0.97 0.015 0.005
-                    reward_value = (0.97 * reward + 0.015 * proba + 0.005 * hit)
+                    # For a subset of 10 classes 0.97 0.015 0.01
+                    reward_value = (0.97 * reward + 0.015 * proba + 0.01 * hit)
 
                     if action_key == 0:
                         reward_value = -reward_value
@@ -368,6 +477,7 @@ class Q(QLearning):
 
                     self.save_r_df(state_key, reward_value)
 
+                del seen_states
                 seen_states = []
 
             # Update State.
@@ -402,7 +512,7 @@ class Q(QLearning):
 
     def export_table(self):
         return (self.q_df, self.r_df)
-    
+
     def save_table_to_file(self, path = "out_state.txt"):
         with open(path, "w") as f:
             f.write("qvalues\n---------------\n")
@@ -424,7 +534,7 @@ class Q(QLearning):
                         f.write(str(el) + " ")
 
                 f.write("\n")
-    
+
     def import_table(self, q_df, r_df):
         self.q_df = q_df
         self.r_df = r_df

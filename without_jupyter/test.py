@@ -6,10 +6,11 @@ import argparse
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-d', '--dataset',  type=str)
-    parser.add_argument('-n', '--nclasses', type=int)
-    parser.add_argument('-i', '--iters',    type=int)
-    parser.add_argument('-f', '--filename', type=str)
+    parser.add_argument('-d',    '--dataset',  type=str)
+    parser.add_argument('-n',    '--nclasses', type=int)
+    parser.add_argument('-i',    '--iters',    type=int)
+    parser.add_argument('-fout', '--fileout',  type=str)
+    parser.add_argument('-fin',  '--filein',   type=str)
 
     args = parser.parse_args()
 
@@ -17,9 +18,13 @@ if __name__ == '__main__':
     if args.nclasses != None:
         nclasses = args.nclasses
 
-    filename = "out_test.txt"
-    if args.filename != None:
-        filename = args.filename
+    fileout = "out_test.txt"
+    if args.fileout != None:
+        fileout = args.fileout
+
+    filein = "out_state.txt"
+    if args.filein != None:
+        filein = args.filein
 
     if args.dataset == None or parser.dataset == "QUIC":
         (train_dataframe, val_dataframe, test_dataframe) = QUIC_dataset(nclasses)
@@ -37,10 +42,10 @@ if __name__ == '__main__':
 
     q_tester = Qlearning_tester(iters, nfeatures, nclasses)
 
-    q_tester.load_q_df("out_state.txt")
+    q_tester.load_q_df(filein)
 
     q_tester.X = X
     q_tester.y = y
     q_tester.test(iters)
 
-    q_tester.test_acc(iters, X_test, y_test)
+    q_tester.test_acc(iters, X_test, y_test, fileout)
