@@ -4,6 +4,8 @@ from help import QUIC_dataset, TLS_dataset, Qlearning_tester, create_balanced_te
 import argparse
 from datetime import datetime
 
+import time
+
 if __name__ == '__main__':
     ##### qlearning default params ######
     increased_rd = 500 # increased randomness for n iters
@@ -15,6 +17,7 @@ if __name__ == '__main__':
     gamma = 0.95
     nclasses = 10
     batches = 100
+    runs = 1
     #####################################
 
     parser = argparse.ArgumentParser()
@@ -27,6 +30,7 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--iters',    type=int)
     parser.add_argument('-f', '--features', type=str)
     parser.add_argument('-b', '--batches',  type=int)
+    parser.add_argument('-r', '--runs',     type=int)
 
     args = parser.parse_args()
 
@@ -47,6 +51,9 @@ if __name__ == '__main__':
 
     if args.batches != None:
         batches = args.batches
+
+    if args.runs != None:
+        runs = args.runs
 
     if args.features != None:
         features = [int(item) for item in args.features.split(',')]
@@ -72,12 +79,18 @@ if __name__ == '__main__':
 
     nfeatures = q.X.shape[1]
 
-    (q.X_test, q.y_test) = create_balanced_test_data(nfeatures, test_dataframe, nfrom_class = 1000)
+    (q.X_test, q.y_test) = create_balanced_test_data(nfeatures, test_dataframe, nfrom_class = 100)
 
-    q.initialize(nfeatures, iters, base_samples_amount, epsilon, alpha, gamma)
+    # start = time.time()
+    for i in range(runs):
+        q.initialize(nfeatures, iters, base_samples_amount, epsilon, alpha, gamma)
 
-    state_key = q.update_state(State_key(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 0)
-    q.learn(state_key, batches, iters, increased_rd)
+        state_key = q.update_state(State_key(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), 0)
+
+        q.learn(state_key, batches, iters, increased_rd)
+    # end = time.time()
+
+    # print(q.func_time / (end - start))
 
     # time = str(datetime.now().strftime('%Y-%m-%d%H:%M:%S'))
 

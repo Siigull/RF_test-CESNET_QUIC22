@@ -1,183 +1,190 @@
 qvalues
 ---------------
-State_key(percent_of_class=3, duration=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 1 0.019425993572155895 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0 -0.021727599000608604 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.005910048517555722 
-State_key(percent_of_class=2, duration=7, bytes_server=6, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.01953852241830974 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 1 0.017833419010279863 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 0.0016000674644267067 
-State_key(percent_of_class=3, duration=2, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 1 0.02112777241830974 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 -9.929685948465881e-06 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 1 0.0014936474183097407 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.017994729380791705 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 -0.004549208009314318 
-State_key(percent_of_class=2, duration=0, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0 -0.0013134867040240272 
-State_key(percent_of_class=2, duration=2, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.004944738327400651 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 0.0013952551547289954 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 -0.006559183132595456 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 0 -0.021741817872855194 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 0 -0.018928748608785934 
-State_key(percent_of_class=3, duration=4, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0 -0.007016678668309741 
-State_key(percent_of_class=2, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.002235856667393994 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0 -0.0020347962686872298 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 1 0.02175356606910339 
-State_key(percent_of_class=3, duration=2, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0 -0.018269390065368565 
-State_key(percent_of_class=2, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 -0.01726737705672688 
-State_key(percent_of_class=3, duration=1, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.021311765065368565 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.00485308491830974 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0 -0.021068574318615318 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 1 0.021330560879848203 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 1 0.007059749181130253 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 1 -0.0006984775816902581 
-State_key(percent_of_class=2, duration=1, bytes_server=3, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 1 0.00568552241830974 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) 0 -0.005878064379683613 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0 -0.004503816574938136 
-State_key(percent_of_class=3, duration=4, bytes_server=0, ppi_duration=3, ppi_percent_duration=0, centroid_size=2) 0 -0.004149008338639411 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.020439175644116195 
-State_key(percent_of_class=2, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.021515426519729028 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.003843383401412661 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.0018683036683097428 
-State_key(percent_of_class=2, duration=2, bytes_server=5, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.006325680014745565 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 1 0.00152994590141266 
-State_key(percent_of_class=3, duration=4, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 1 0.0022329509897383126 
-State_key(percent_of_class=2, duration=3, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.018838050644116193 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) 0 -0.0197394152754526 
-State_key(percent_of_class=2, duration=2, bytes_server=3, ppi_duration=3, ppi_percent_duration=0, centroid_size=1) 0 -0.005213113327400652 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 1 0.0036601664305475033 
-State_key(percent_of_class=2, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.004879289015415705 
-State_key(percent_of_class=2, duration=1, bytes_server=3, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0 -0.01938927241830974 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.019126662131042662 
-State_key(percent_of_class=2, duration=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.003810290275452598 
-State_key(percent_of_class=3, duration=2, bytes_server=3, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.0010268000680793284 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=1) 1 0.018769870452750793 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) 1 0.0070182152108113575 
-State_key(percent_of_class=2, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0 -0.007348110257101384 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0 -0.019213609568169684 
-State_key(percent_of_class=2, duration=2, bytes_server=3, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 1 0.006569022418309742 
-State_key(percent_of_class=3, duration=6, bytes_server=1, ppi_duration=5, ppi_percent_duration=0, centroid_size=3) 0 0.0003194856462063875 
-State_key(percent_of_class=3, duration=2, bytes_server=5, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 1 0.00016217862162840667 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=2) 0 -0.017461759607750735 
-State_key(percent_of_class=2, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) 0 -0.019290540275452597 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 1 0.006764014301426625 
-State_key(percent_of_class=2, duration=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 1 0.019196162299262125 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 1 0.0034206154567347903 
-State_key(percent_of_class=3, duration=3, bytes_server=4, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) 0 -0.007752869442119266 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0 -0.0047008237317838495 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0 0.0018384775816902578 
-State_key(percent_of_class=2, duration=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=1, centroid_size=2) 0 -0.009601349341386664 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=2) 1 0.0022738980832033577 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 1 -0.0018384775816902578 
-State_key(percent_of_class=3, duration=4, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 1 -0.0003038621970748729 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=1) 1 0.019552242656404976 
-State_key(percent_of_class=3, duration=2, bytes_server=2, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 0 -0.021758060879848204 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=3) 1 0.020177772418309745 
-State_key(percent_of_class=2, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 1 -0.0005559775816902582 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 0 -0.0007783875951066256 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 0 -0.007733394075650049 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0 -0.018217309174384796 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 1 0.0033333587686872283 
-State_key(percent_of_class=2, duration=1, bytes_server=3, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0 -0.02115152241830974 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0 0.0016959775816902578 
-State_key(percent_of_class=3, duration=3, bytes_server=3, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 1 0.0008777821234014562 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 0 -0.0032389146514126615 
-State_key(percent_of_class=3, duration=7, bytes_server=1, ppi_duration=5, ppi_percent_duration=0, centroid_size=3) 0 -0.0007759831037936129 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 1 0.005122064542851867 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=1) 1 0.01896582388889798 
-State_key(percent_of_class=3, duration=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0 0.0 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 0.0 
-State_key(percent_of_class=2, duration=2, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 0.0 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 1 0.0 
-State_key(percent_of_class=3, duration=4, bytes_server=0, ppi_duration=3, ppi_percent_duration=0, centroid_size=2) 1 0.0 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.0 
-State_key(percent_of_class=2, duration=2, bytes_server=3, ppi_duration=3, ppi_percent_duration=0, centroid_size=1) 1 0.0 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) 0 0.0 
-State_key(percent_of_class=2, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 1 0.0 
-State_key(percent_of_class=2, duration=2, bytes_server=3, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 0 0.0 
-State_key(percent_of_class=3, duration=6, bytes_server=1, ppi_duration=5, ppi_percent_duration=0, centroid_size=3) 1 0.0 
-State_key(percent_of_class=3, duration=2, bytes_server=5, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 0 0.0 
-State_key(percent_of_class=2, duration=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0 0.0 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 0 0.0 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 1 0.0 
-State_key(percent_of_class=2, duration=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=1, centroid_size=2) 1 0.0 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=1) 0 0.0 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 0 0.0 
-State_key(percent_of_class=2, duration=1, bytes_server=3, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 1 0.0 
-State_key(percent_of_class=3, duration=3, bytes_server=3, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 0 0.0 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 1 0.0 
-State_key(percent_of_class=2, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 1 0.009719387873034552 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0 -0.02256246418429172 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0 -0.02485382166097943 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 -0.008104493350958388 
+State_key(percent_of_class=2, duration=7, percent_duration=0, bytes_client=3, bytes_server=6, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.02258925850247354 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0 -0.02138426319222823 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 -0.0007624578411895887 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 1 0.008804218729746266 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=1, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 1 0.023449051684291723 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 -0.0025635801522059416 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 1 0.0040460141842917205 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.010602420884535923 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.007072562510680801 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 1 0.004070951684291723 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 -0.00346102828614805 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.0065174391842917215 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.008966512672473663 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 1 0.023293122138837177 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 1 0.022029344541434577 
+State_key(percent_of_class=4, duration=4, percent_duration=0, bytes_client=3, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 1 0.00987824580193878 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.0037486389553539937 
+State_key(percent_of_class=4, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 1 0.00448661273742265 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 1 0.02307027311286315 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=2, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0 -0.010526880255720291 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.01937352399045778 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.02384045168429172 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.0016178487724745616 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 -0.002261630866220906 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=3, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 1 0.02354476120810125 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0 -0.009202200872603407 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 1 0.0016658683509583896 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=3, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 1 0.007850320859415397 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) 0 -0.009415819455957746 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0 -0.006142917080007116 
+State_key(percent_of_class=3, duration=4, percent_duration=0, bytes_client=2, bytes_server=0, ppi_duration=3, ppi_percent_duration=0, centroid_size=2) 0 -0.006383607934291722 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.023362042410098174 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.024103175485199 
+State_key(percent_of_class=4, duration=0, percent_duration=2, bytes_client=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.00603790235235399 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.005855983237662153 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=3, bytes_server=5, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.007568724228279989 
+State_key(percent_of_class=4, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 1 0.004109063066639703 
+State_key(percent_of_class=3, duration=4, percent_duration=0, bytes_client=3, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0 -0.00493545168429172 
+State_key(percent_of_class=2, duration=3, percent_duration=0, bytes_client=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.020872286728279992 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) 0 -0.021953344541434577 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=2, bytes_server=3, ppi_duration=3, ppi_percent_duration=0, centroid_size=1) 0 -0.007203707178797215 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0 -0.005014182934291722 
+State_key(percent_of_class=4, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.00743618360235399 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.02162447438450817 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 -0.005887617893082929 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.018905633502473537 
+State_key(percent_of_class=4, duration=2, percent_duration=2, bytes_client=2, bytes_server=3, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.00382636001587949 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=1) 1 0.021228890374767915 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 1 0.008010567755720292 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=2, bytes_server=3, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 1 0.00908932668429172 
+State_key(percent_of_class=4, duration=6, percent_duration=0, bytes_client=1, bytes_server=1, ppi_duration=5, ppi_percent_duration=0, centroid_size=3) 1 0.0026936623697755915 
+State_key(percent_of_class=4, duration=2, percent_duration=2, bytes_client=3, bytes_server=5, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.0017846184192408336 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=2) 1 0.010328563405903442 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0 -0.022040018991984028 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 -0.02153166103743857 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=3, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 1 0.005375024669240835 
+State_key(percent_of_class=3, duration=3, percent_duration=0, bytes_client=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) 1 0.009104899898577434 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0 -0.005589552791721874 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 1 0.00037545168429172176 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 1 0.022008925710265748 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 1 0.00408849545904273 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0 -0.00037545168429172176 
+State_key(percent_of_class=3, duration=4, percent_duration=0, bytes_client=3, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 0 -0.002655451684291722 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=1) 0 -0.022242076684291723 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=2, bytes_server=2, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 0 -0.02398295168429172 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=3) 1 0.02202832668429172 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 1 0.001983752966343003 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=3, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 1 0.002593139856334734 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 0 -0.010555486081838619 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 1 0.010677058483457038 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=3, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0 -0.023127951684291718 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0 -0.0005835016842917229 
+State_key(percent_of_class=3, duration=3, percent_duration=0, bytes_client=3, bytes_server=3, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 1 0.003471066335907502 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 0 -0.005385314554734942 
+State_key(percent_of_class=3, duration=7, percent_duration=0, bytes_client=1, bytes_server=1, ppi_duration=5, ppi_percent_duration=0, centroid_size=3) 1 0.003976162369775592 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 1 0.0013113978880682764 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 1 0.007431948593632379 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=1) 0 -0.02091258561286315 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 1 0.008568084620799658 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 1 0.0 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=1, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 0 0.0 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0 0.0 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 0.0 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0 0.0 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 1 0.0 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 0 0.0 
+State_key(percent_of_class=4, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0 0.0 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 0.0 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 0.0 
+State_key(percent_of_class=3, duration=4, percent_duration=0, bytes_client=3, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 1 0.0 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) 1 0.0 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=1) 0 0.0 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0 0.0 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0 0.0 
+State_key(percent_of_class=4, duration=2, percent_duration=2, bytes_client=3, bytes_server=5, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0 0.0 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) 1 0.0 
+State_key(percent_of_class=3, duration=3, percent_duration=0, bytes_client=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) 0 0.0 
+State_key(percent_of_class=3, duration=4, percent_duration=0, bytes_client=3, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 1 0.0 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=2, bytes_server=2, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 1 0.0 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=3) 0 0.0 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=3, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 1 0.0 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 1 0.0 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0 0.0 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 0 0.0 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0 -0.013890151515151512 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 0 0.0 
 rewards
 ---------------
-State_key(percent_of_class=3, duration=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0.02044841428647989 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) -0.02248952699380652 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.005902260440326043 
-State_key(percent_of_class=2, duration=7, bytes_server=6, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0.020566865703483938 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0.01877202001082091 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.0016427395596739546 
-State_key(percent_of_class=3, duration=2, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 0.022239760440326044 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) -7.523955967395426e-05 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0.0015722604403260428 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0.018941820400833375 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) -0.004790715997450079 
-State_key(percent_of_class=2, duration=0, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) -0.0013826175831831867 
-State_key(percent_of_class=2, duration=2, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0.005204987713053316 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) -0.02288612407668968 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) -0.01992499853556414 
-State_key(percent_of_class=3, duration=4, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) -0.007385977545589202 
-State_key(percent_of_class=2, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.002353533334098941 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) -0.0021418908091444524 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0.022898490599056204 
-State_key(percent_of_class=3, duration=2, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) -0.01923093691091428 
-State_key(percent_of_class=3, duration=1, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.02243343691091428 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) -0.02217744665117402 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0.0074313149275055295 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) -0.000735239559673956 
-State_key(percent_of_class=2, duration=1, bytes_server=3, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0.0059847604403260425 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) -0.006004760440326045 
-State_key(percent_of_class=3, duration=4, bytes_server=0, ppi_duration=3, ppi_percent_duration=0, centroid_size=2) -0.004367377198567801 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.021514921730648628 
-State_key(percent_of_class=2, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.021637528297468903 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.004045666738329117 
-State_key(percent_of_class=2, duration=2, bytes_server=5, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.0066586105418374375 
-State_key(percent_of_class=3, duration=4, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0.0023504747260403294 
-State_key(percent_of_class=2, duration=3, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.01982952699380652 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) -0.020778331868897475 
-State_key(percent_of_class=2, duration=2, bytes_server=3, ppi_duration=3, ppi_percent_duration=0, centroid_size=1) -0.005487487713053318 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0.003852806768997372 
-State_key(percent_of_class=2, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.004076347741913345 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.020133328558992275 
-State_key(percent_of_class=2, duration=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.004010831868897472 
-State_key(percent_of_class=3, duration=2, bytes_server=3, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.001080842176925609 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=1) 0.019757758371316624 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) 0.007387594958748797 
-State_key(percent_of_class=2, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) -0.0077348529022119835 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) -0.020224852177020722 
-State_key(percent_of_class=2, duration=2, bytes_server=3, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 0.0069147604403260446 
-State_key(percent_of_class=3, duration=6, bytes_server=1, ppi_duration=5, ppi_percent_duration=0, centroid_size=3) 0.00033630068021725003 
-State_key(percent_of_class=3, duration=2, bytes_server=5, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 0.00017071433855621754 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=2) -0.018380799587106037 
-State_key(percent_of_class=2, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) -0.02030583186889747 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 0.007120015054133289 
-State_key(percent_of_class=2, duration=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0.020206486630802236 
-State_key(percent_of_class=3, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 0.003600647849194516 
-State_key(percent_of_class=3, duration=3, bytes_server=4, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) -0.008160915202230806 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) -0.004948235507140895 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0.0019352395596739557 
-State_key(percent_of_class=2, duration=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=1, centroid_size=2) -0.01010668351724912 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=2) 0.002393576929687745 
-State_key(percent_of_class=3, duration=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) -0.0019352395596739557 
-State_key(percent_of_class=3, duration=4, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) -0.0003198549442893399 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=1) 0.020581308059373662 
-State_key(percent_of_class=3, duration=2, bytes_server=2, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) -0.022903221978787584 
-State_key(percent_of_class=2, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=3) 0.021239760440326046 
-State_key(percent_of_class=2, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) -0.000585239559673956 
-State_key(percent_of_class=3, duration=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) -0.00047022167405553084 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) -0.008167285422653658 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) -0.019042320818544317 
-State_key(percent_of_class=3, duration=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 0.003508798703881293 
-State_key(percent_of_class=2, duration=1, bytes_server=3, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) -0.022264760440326044 
-State_key(percent_of_class=3, duration=3, bytes_server=3, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 0.0009239811825278487 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) -0.0034093838435922752 
-State_key(percent_of_class=3, duration=7, bytes_server=1, ppi_duration=5, ppi_percent_duration=0, centroid_size=3) -0.0008168243197827505 
-State_key(percent_of_class=3, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0.005391646887212492 
-State_key(percent_of_class=2, duration=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=1) 0.0199640251462084 
-State_key(percent_of_class=2, duration=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0.010230934603194266 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) -0.023749962299254444 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) -0.024942873589577027 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) -0.008531045632587778 
+State_key(percent_of_class=2, duration=7, percent_duration=0, bytes_client=3, bytes_server=6, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.02377816684470899 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) -0.022509750728661296 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) -0.0007434265849687299 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=1, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 0.024683212299254447 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) -0.0022381610172031623 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0.004258962299254443 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0.011160443036353603 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.006367818651235796 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0.004285212299254445 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) -0.003588161017203161 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.0068604622992544445 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 0.02451907593561808 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=3) 0.02318878372782587 
+State_key(percent_of_class=4, duration=4, percent_duration=0, bytes_client=3, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) 0.010398153475725033 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.0039459357424778884 
+State_key(percent_of_class=4, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0.004722750249918579 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0.02428449801354016 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=2, bytes_server=2, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) -0.011080926584968728 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.020393183147850293 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.025095212299254443 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) -0.0023806640697062167 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=3, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0.024783959166422367 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) -0.009686527234319377 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0.0017535456325877786 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=3, ppi_duration=1, ppi_percent_duration=2, centroid_size=1) 0.007145212299254443 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) -0.009589909268951414 
+State_key(percent_of_class=3, duration=4, percent_duration=0, bytes_client=2, bytes_server=0, ppi_duration=3, ppi_percent_duration=0, centroid_size=2) -0.006719587299254444 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0.024591623589577026 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.024210837299254443 
+State_key(percent_of_class=4, duration=0, percent_duration=2, bytes_client=0, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.006355686686688411 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0.005673087299254445 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=3, bytes_server=5, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.007967078135031568 
+State_key(percent_of_class=4, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0.004325329543831267 
+State_key(percent_of_class=3, duration=4, percent_duration=0, bytes_client=3, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) -0.005195212299254443 
+State_key(percent_of_class=2, duration=3, percent_duration=0, bytes_client=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0.02197082813503157 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=2, ppi_percent_duration=0, centroid_size=1) -0.023108783727825873 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=2, bytes_server=3, ppi_duration=3, ppi_percent_duration=0, centroid_size=1) -0.007582849661891805 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=2, centroid_size=2) -0.005278087299254444 
+State_key(percent_of_class=4, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) 0.007827561686688411 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.02276260461527176 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) -0.006197492519034662 
+State_key(percent_of_class=4, duration=2, percent_duration=2, bytes_client=2, bytes_server=3, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0.004027747385136306 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=1) 0.022346200394492543 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) 0.00843217658496873 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=2, bytes_server=3, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 0.009567712299254443 
+State_key(percent_of_class=4, duration=6, percent_duration=0, bytes_client=1, bytes_server=1, ppi_duration=5, ppi_percent_duration=0, centroid_size=3) 0.002835434073447991 
+State_key(percent_of_class=4, duration=2, percent_duration=2, bytes_client=3, bytes_server=5, ppi_duration=0, ppi_percent_duration=2, centroid_size=2) 0.0018785457044640354 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=2) 0.01087217200621415 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=2, centroid_size=3) -0.023200019991562137 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=2, ppi_duration=0, ppi_percent_duration=2, centroid_size=1) -0.022664906355198498 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=3, bytes_server=1, ppi_duration=1, ppi_percent_duration=1, centroid_size=3) 0.005657920704464037 
+State_key(percent_of_class=3, duration=3, percent_duration=0, bytes_client=2, bytes_server=4, ppi_duration=0, ppi_percent_duration=1, centroid_size=3) 0.0095841051563973 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) -0.005883739780759868 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0.00039521229925444396 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 0.023167290221332366 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 0.004039573930270488 
+State_key(percent_of_class=3, duration=4, percent_duration=0, bytes_client=3, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) -0.002795212299254444 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=1) -0.023412712299254446 
+State_key(percent_of_class=3, duration=2, percent_duration=2, bytes_client=2, bytes_server=2, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) -0.025245212299254444 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=3) 0.023187712299254443 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=1) 0.0020881610172031615 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=3, bytes_server=0, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) 0.002729620901404983 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=1, centroid_size=2) -0.011111037980882758 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0.011002571321810834 
+State_key(percent_of_class=2, duration=1, percent_duration=3, bytes_client=2, bytes_server=3, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) -0.024345212299254442 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) -0.0006142122992544453 
+State_key(percent_of_class=3, duration=3, percent_duration=0, bytes_client=3, bytes_server=3, ppi_duration=1, ppi_percent_duration=0, centroid_size=2) 0.0036537540377973706 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) -0.0056687521628788875 
+State_key(percent_of_class=3, duration=7, percent_duration=0, bytes_client=1, bytes_server=1, ppi_duration=5, ppi_percent_duration=0, centroid_size=3) 0.004185434073447992 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=1, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 0.0013804188295455542 
+State_key(percent_of_class=3, duration=0, percent_duration=2, bytes_client=0, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) 0.007823103782770926 
+State_key(percent_of_class=2, duration=2, percent_duration=2, bytes_client=1, bytes_server=1, ppi_duration=1, ppi_percent_duration=0, centroid_size=1) -0.022013248013540158 
+State_key(percent_of_class=3, duration=1, percent_duration=3, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=2) 0.00901903644294701 
+State_key(percent_of_class=2, duration=0, percent_duration=2, bytes_client=1, bytes_server=0, ppi_duration=0, ppi_percent_duration=0, centroid_size=1) -0.014621212121212118 

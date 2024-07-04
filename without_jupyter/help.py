@@ -125,6 +125,12 @@ class Qlearning_tester():
     def centroid_size_into_discrete(self, size):
         return self.value_into_discrete(size, self.CENTROID_SIZE_VALUES)
     
+    def centroid_size_into_discrete1(self, size):
+        return self.value_into_discrete(size, self.CENTROID_SIZE_VALUES1)
+    
+    def centroid_size_into_discrete2(self, size):
+        return self.value_into_discrete(size, self.CENTROID_SIZE_VALUES2)
+    
     def centroid_ipt_into_discrete(self, ipt):
         return self.value_into_discrete(ipt, self.CENTROID_IPT_VALUES)
     
@@ -154,6 +160,20 @@ class Qlearning_tester():
             sum += self.calculate_distance(self.class_size_sums[cl][i], values[i + 60], self.to_i)
 
         return self.centroid_size_into_discrete(sum / self.num_of_sizes)
+    
+    def calculate_centroid_size1(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_sizes1):
+            sum += self.calculate_distance(self.class_size_sums1[cl][i], values[i + 60], self.to_i)
+
+        return self.centroid_size_into_discrete1(sum / self.num_of_sizes1)
+    
+    def calculate_centroid_size2(self, cl, values):
+        sum = 0
+        for i in range(self.num_of_sizes2):
+            sum += self.calculate_distance(self.class_size_sums2[cl][i], values[i + 66], self.to_i)
+
+        return self.centroid_size_into_discrete2(sum / self.num_of_sizes2)
 
     def calculate_centroid_ipt(self, cl, values):
         sum = 0
@@ -195,11 +215,14 @@ class Qlearning_tester():
         else:
             self.CLASS_PERCENT_VALUES    = [0.001, 0.01, 0.05, 0.1]
 
+        self.PREDICT_PROBA_VALUES        = [0.25, 0.50, 0.75]
         self.DURATION_VALUES             = [0.1, 1, 29.9, 59.9, 89.9, 119.9, 299]
         self.DURATION_PERCENT_VALUES     = [0.05, 0.1, 0.2, 0.4]
         self.PPI_DURATION_VALUES         = [0.2, 9.9, 19.9, 70, 112]
         self.PPI_DURATION_PERCENT_VALUES = [0.005, 0.01, 0.1, 0.4]
         self.CENTROID_SIZE_VALUES        = [300, 500, 800]
+        self.CENTROID_SIZE_VALUES1       = [550, 700, 950]
+        self.CENTROID_SIZE_VALUES2       = [50, 200, 400]
         self.CENTROID_IPT_VALUES         = [2, 4, 10]
         self.CENTROID_BYTES_VALUES       = [2500, 5000, 9000]
         self.CENTROID_ROUNDTRIP_VALUES   = [2, 4, 6]
@@ -209,18 +232,22 @@ class Qlearning_tester():
         self.y_used = np.ndarray(shape=(iters,))
         self.to_i = 0
 
+        self.num_of_sizes1 = 6
+        self.num_of_sizes2 = 6
         self.num_of_sizes = 12
         self.num_of_ipts = 10
         self.num_of_bytes = 1
         self.num_of_roundtrips = 1
 
-        self.class_size_sums = {}
+        self.class_size_sums1 = {}
+        self.class_size_sums2 = {}
         self.class_ipt_sums = {}
         self.class_bytes_sums = {}
         self.class_roundtrip_sums = {}
         for class_i in range(200):
             self.class_ipt_sums[class_i] = []
-            self.class_size_sums[class_i] = []
+            self.class_size_sums1[class_i] = []
+            self.class_size_sums2[class_i] = []
             self.class_bytes_sums[class_i] = []
             self.class_roundtrip_sums[class_i] = []
 
@@ -233,8 +260,11 @@ class Qlearning_tester():
             for _ in range(self.num_of_ipts):
                 self.class_ipt_sums[class_i].append(0)
 
-            for _ in range(self.num_of_sizes):
-                self.class_size_sums[class_i].append(0)
+            for _ in range(self.num_of_sizes1):
+                self.class_size_sums1[class_i].append(0)
+
+            for _ in range(self.num_of_sizes2):
+                self.class_size_sums2[class_i].append(0)
 
         self.last_action = 0
 
@@ -297,8 +327,11 @@ class Qlearning_tester():
             for i in range(self.num_of_ipts):
                 self.class_ipt_sums[prev_class][i] = self.X_used[self.to_i - 1][i]
 
-            for i in range(self.num_of_sizes):
-                self.class_size_sums[prev_class][i] = self.X_used[self.to_i - 1][i + 60]
+            for i in range(self.num_of_sizes1):
+                self.class_size_sums1[prev_class][i] = self.X_used[self.to_i - 1][i + 60]
+
+            for i in range(self.num_of_sizes2):
+                self.class_size_sums2[prev_class][i] = self.X_used[self.to_i - 1][i + 66]
 
             self.duration_amount[prev_duration] += 1
             self.ppi_duration_amount[prev_ppi_duration] += 1
@@ -319,7 +352,8 @@ class Qlearning_tester():
         ppi_duration_percent = self.ppi_duration_amount[self.cur_state["ppi_duration"]] / self.used
         self.cur_state["ppi_percent_duration"] = self.ppi_percent_duration_into_discrete(ppi_duration_percent)
 
-        self.cur_state["centroid_size"] = self.calculate_centroid_size(next_class, self.X[index])
+        self.cur_state["centroid_size1"] = self.calculate_centroid_size1(next_class, self.X[index])
+        self.cur_state["centroid_size1"] = self.calculate_centroid_size2(next_class, self.X[index])
         self.cur_state["centroid_ipt"] = self.calculate_centroid_ipt(next_class, self.X[index])
         self.cur_state["centroid_bytes"] = self.calculate_centroid_bytes(next_class, self.X[index])
         self.cur_state["centroid_roundtrip"] = self.calculate_centroid_roundtrip(next_class, self.X[index])
