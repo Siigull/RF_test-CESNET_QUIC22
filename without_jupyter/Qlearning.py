@@ -18,8 +18,10 @@ from tqdm import tqdm
 
 import time
 
-used_features  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+used_features  = [0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0]
 classes_amount = [5, 8, 5, 9, 7, 6, 5, 4, 4, 4, 4]
+
+cur_arr = dict()
 
 @dataclass
 class State_key:
@@ -79,69 +81,83 @@ class Q(QLearning):
             
             predict_arr = clf.predict(self.X_big_test)
             
-            f.write(f"q_learning_acc: {accuracy_score(self.y_big_test, predict_arr):.4f}" + "\n")
+            f.write(f"q_learning_f1: {f1_score(self.y_big_test, predict_arr, average='macro'):.4f}" + "\n")
 
             val = 0
             for _ in range(3):
                 clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
-                indices = np.random.choice(self.base_samples + self.t, self.to_i, replace=False)
+                indices = np.random.choice(len(self.X), self.to_i, replace=False)
         
                 clf.fit(self.X[indices], self.y[indices])
                 
                 predict_arr = clf.predict(self.X_big_test)
 
-                val += accuracy_score(self.y_big_test, predict_arr)
+                val += f1_score(self.y_big_test, predict_arr, average='macro')
 
             val /= 3
-            f.write(f"random_learning_acc: {val:.4f}" + "\n")
+            f.write(f"random_learning_f1: {val:.4f}" + "\n")
             
             clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
             clf.fit(self.X_u[:self.u_to_i], self.y_u[:self.u_to_i])
 
             predict_arr = clf.predict(self.X_big_test)
             
-            f.write(f"uncertainty_sampling_acc: {accuracy_score(self.y_big_test, predict_arr):.4f} ({self.u_to_i} picked)" + "\n")
+            f.write(f"uncertainty_sampling_f1: {f1_score(self.y_big_test, predict_arr, average='macro'):.4f} ({self.u_to_i} picked)" + "\n")
 
             clf = RandomForestClassifier(max_depth=self.m_depth, n_jobs=-1)
             clf.fit(self.X[:self.base_samples + self.t], self.y[:self.base_samples + self.t])
             
             predict_arr = clf.predict(self.X_big_test)
             
-            f.write(f"total_learning_acc: {accuracy_score(self.y_big_test, predict_arr):.4f}" + "\n")
+            f.write(f"total_learning_f1: {f1_score(self.y_big_test, predict_arr, average='macro'):.4f}" + "\n")
             
             q_df = self.q_df
             q_df = q_df.sort_values(by=["q_value"], ascending=False)
             f.write(str(q_df.head()) + "\n\n")
 
     def get_clf_prediction(self, index):
-        start = time.time()       
+        start = time.time()      
 
-        if index >= (self.last_proba_index + len(self.proba_arr)):
-            self.last_proba_index = index
-            probas = self.clf.predict_proba(self.X[index : index+self.batch+self.first_proba])
-            hits = (self.clf.predict(self.X[index : index+self.batch+self.first_proba]) == \
-                                     self.y[index : index+self.batch+self.first_proba])
+        res_index = np.where(self.clf.classes_ == self.y[index])
+
+        if len(res_index[0]):
+            proba = self.clf.predict_proba(self.X[index].reshape(1, -1))[0][res_index[0][0]]
+        else:
+            proba = 0
+
+        hit = self.clf.predict(self.X[index].reshape(1, -1))[0] == self.y[index]
+
+        clf = RandomForestClassifier(max_depth=15, n_jobs=-1)
+        clf.fit(self.X_u[:self.u_to_i], self.y_u[:self.u_to_i])
+        self.last_proba = np.max(clf.predict_proba(self.X[index].reshape(1, -1))[0])
+
+        return (proba, hit)
+
+        # if index >= (self.last_proba_index + len(self.proba_arr)):
+        #     self.last_proba_index = index
+        #     probas = self.clf.predict_proba(self.X[index : index+self.batch+self.first_proba])
+        #     hits = (self.clf.predict(self.X[index : index+self.batch+self.first_proba]) == \
+        #                              self.y[index : index+self.batch+self.first_proba])
             
-            clf = RandomForestClassifier(max_depth=15, n_jobs=-1)
-            clf.fit(self.X_u[:self.u_to_i], self.y_u[:self.u_to_i])
-            un_proba = clf.predict_proba(self.X[index : index+self.batch+self.first_proba])
+        #     clf = RandomForestClassifier(max_depth=15, n_jobs=-1)
+        #     clf.fit(self.X_u[:self.u_to_i], self.y_u[:self.u_to_i])
+        #     un_proba = clf.predict_proba(self.X[index : index+self.batch+self.first_proba])
 
-            self.proba_arr = []
-            for i, el in enumerate(probas):
-                res_index = np.where(self.clf.classes_ == self.y[index + i])
-                if len(res_index[0]):
-                    proba = el[res_index[0][0]]
-                else:
-                    proba = 0
+        #     self.proba_arr = []
+        #     for i, el in enumerate(probas):
+        #         res_index = np.where(self.clf.classes_ == self.y[index + i])
+        #         if len(res_index[0]):
+        #             proba = el[res_index[0][0]]
+        #         else:
+        #             proba = 0
 
-                self.proba_arr.append([hits[i], proba, np.max(un_proba[i])])
+        #         self.proba_arr.append([hits[i], proba, np.max(un_proba[i])])
             
-            self.first_proba = False
+        #     self.first_proba = False
 
-        self.last_proba = self.proba_arr[index - self.last_proba_index][2]
 
-        end = time.time()
-        self.func_time += end - start
+        # end = time.time()
+        # self.func_time += end - start
 
         return (self.proba_arr[index - self.last_proba_index][1],
                 self.proba_arr[index - self.last_proba_index][0])
@@ -298,19 +314,20 @@ class Q(QLearning):
         centroid_bytes = self.calculate_centroid_bytes(next_class, self.X[sample_index])
         centroid_roundtrip = self.calculate_centroid_roundtrip(next_class, self.X[sample_index])
 
-        return State_key(self.class_percent_into_discrete(class_percent), 
-                         duration,
-                         self.percent_duration_into_discrete(percent_duration),
-                         client_bytes,
-                         server_bytes,
-                         ppi_duration,
-                         self.ppi_percent_duration_into_discrete(ppi_percent_duration),
-                         self.centroid_size_into_discrete(centroid_size),
-                        #  self.centroid_size_into_discrete1(centroid_size1),
-                        #  self.centroid_size_into_discrete2(centroid_size2),
-                         self.centroid_ipt_into_discrete(centroid_ipt),
-                         self.centroid_bytes_into_discrete(centroid_bytes),
-                         self.centroid_roundtrip_into_discrete(centroid_roundtrip))
+        # return State_key(self.class_percent_into_discrete(class_percent), 
+        #                  duration,
+        #                  self.percent_duration_into_discrete(percent_duration),
+        #                  client_bytes,
+        #                  server_bytes,
+        #                  ppi_duration,
+        #                  self.ppi_percent_duration_into_discrete(ppi_percent_duration),
+        #                  self.centroid_size_into_discrete(centroid_size),
+        #                 #  self.centroid_size_into_discrete1(centroid_size1),
+        #                 #  self.centroid_size_into_discrete2(centroid_size2),
+        #                  self.centroid_ipt_into_discrete(centroid_ipt),
+        #                  self.centroid_bytes_into_discrete(centroid_bytes),
+        #                  self.centroid_roundtrip_into_discrete(centroid_roundtrip))
+        return State_key(0,0,0,0,0,0,0,0,0,0,0)
 
     def initialize(self, cols, iters, already_used, nclasses, epsilon = 0.9, alpha = 0.2, gamma = 0.9):
         self.q_count = defaultdict(int)
@@ -418,7 +435,20 @@ class Q(QLearning):
             self.used += 1
     
     def extract_possible_actions(self, state_key):
-        return list({0, 1})
+        arr = np.random.choice(len(self.X[self.t:]), size = 10, replace = False)
+        ret_arr = []
+        self.cur_arr = dict()
+        for i in arr:
+            client_bytes = self.client_bytes_into_discrete(self.X[i][90])
+            server_bytes = self.server_bytes_into_discrete(self.X[i][91])
+            duration = self.duration_into_discrete(self.X[i][94])
+            ppi_duration = self.ppi_duration_into_discrete(self.X[i][97])
+
+            self.cur_arr[State_key(0, duration, 0, client_bytes, server_bytes, ppi_duration, 0,0,0,0,0)] = i
+
+            ret_arr.append(State_key(0, duration, 0, client_bytes, server_bytes, ppi_duration, 0,0,0,0,0))
+
+        return ret_arr
 
     def select_action(self, state_key, next_action_list):
         epsilon_greedy_flag = bool(np.random.binomial(n=1, p=self.epsilon_greedy_rate))
@@ -455,15 +485,18 @@ class Q(QLearning):
         return reward
 
     def observe_hit_reward(self, action_key):
-        (proba, hit) = self.get_clf_prediction(self.base_i + self.t)
+        (proba, hit) = self.get_clf_prediction(self.cur_arr[action_key])
 
         proba_reward = (0.5 - proba)
         hit_reward = -1 if hit == 1 else 1
 
-        if action_key == 1:
-            self.X_used[self.to_i] = self.X[self.base_i + self.t]
-            self.y_used[self.to_i] = self.y[self.base_i + self.t]
-            self.to_i += 1
+        # if action_key == 1:
+        # self.X[self.base_i + self.t] = 
+        # self.y[self.base_i + self.t] = self.y[action_key]
+
+        self.X_used[self.to_i] = self.X[self.cur_arr[action_key]]
+        self.y_used[self.to_i] = self.y[self.cur_arr[action_key]]
+        self.to_i += 1
 
         return (proba_reward, hit_reward)
 
@@ -476,7 +509,7 @@ class Q(QLearning):
         seen_states = []
 
         for _ in tqdm(range(1, limit + 1)):
-            if self.t - last_t > 4999:
+            if self.t - last_t > 98:
                 self.big_test()
                 last_t = self.t
 
@@ -507,7 +540,7 @@ class Q(QLearning):
 
             seen_states.append([state_key, action_key, proba, hit, next_max_q])
 
-            if self.t % batch == 1:
+            if self.t % batch == 1 or batch == 1:
                 reward = self.observe_acc_reward(action_key)
 
                 for el in seen_states:

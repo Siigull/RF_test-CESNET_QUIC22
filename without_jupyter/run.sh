@@ -3,13 +3,13 @@
 epsilon=0.9
 alpha=0.2
 gamma=0.95
-batch=400
-initial_iters=400000
+batch=1
+initial_iters=1000
 n_iterations=10
 runs=3
-nclass=0
+nclass=10
 
-features="1,1,1,1,1,1,1,1,1,1,1"
+features="0,1,0,1,1,1,0,0,0,0,0"
 
 for ((i=1; i<=n_iterations; i++))
 do

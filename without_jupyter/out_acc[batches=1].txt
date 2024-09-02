@@ -1,0 +1,104 @@
+452/501q_learning_acc: 0.4435
+random_learning_acc: 0.4455
+uncertainty_sampling_acc: 0.4349 (471 picked)
+total_learning_acc: 0.4583
+                                           state_key  ...   q_value
+0  State_key(percent_of_class=1, duration=0, perc...  ...  0.042057
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.040413
+0  State_key(percent_of_class=0, duration=1, perc...  ...  0.038646
+0  State_key(percent_of_class=1, duration=0, perc...  ...  0.037709
+0  State_key(percent_of_class=1, duration=0, perc...  ...  0.034773
+
+[5 rows x 3 columns]
+
+60/111q_learning_acc: 0.2354
+random_learning_acc: 0.2158
+uncertainty_sampling_acc: 0.3101 (103 picked)
+total_learning_acc: 0.2827
+                                           state_key  ...   q_value
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.047705
+0  State_key(percent_of_class=1, duration=0, perc...  ...  0.046315
+0  State_key(percent_of_class=1, duration=1, perc...  ...  0.046010
+0  State_key(percent_of_class=1, duration=1, perc...  ...  0.043275
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.040191
+
+[5 rows x 3 columns]
+
+52/111q_learning_acc: 0.2593
+random_learning_acc: 0.2227
+uncertainty_sampling_acc: 0.2998 (103 picked)
+total_learning_acc: 0.2939
+                                           state_key  ...   q_value
+0  State_key(percent_of_class=0, duration=4, perc...  ...  0.051327
+0  State_key(percent_of_class=0, duration=1, perc...  ...  0.049022
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.047625
+0  State_key(percent_of_class=2, duration=0, perc...  ...  0.046311
+0  State_key(percent_of_class=1, duration=3, perc...  ...  0.045308
+
+[5 rows x 3 columns]
+
+110/111q_learning_f1: 0.0646
+random_learning_f1: 0.0858
+uncertainty_sampling_f1: 0.0832 (101 picked)
+total_learning_f1: 0.0914
+                                           state_key  ...   q_value
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.161290
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.154905
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.152949
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.142397
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.140249
+
+[5 rows x 3 columns]
+
+110/111q_learning_f1: 0.4271
+random_learning_f1: 0.4725
+uncertainty_sampling_f1: 0.4599 (83 picked)
+total_learning_f1: 0.4805
+                                           state_key  ...   q_value
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.166038
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.122283
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.094011
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.082933
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.079897
+
+[5 rows x 3 columns]
+
+110/111q_learning_f1: 0.3887
+random_learning_f1: 0.4299
+uncertainty_sampling_f1: 0.4605 (90 picked)
+total_learning_f1: 0.4778
+                                           state_key  ...   q_value
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.150023
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.143963
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.140452
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.136213
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.135327
+
+[5 rows x 3 columns]
+
+110/111q_learning_f1: 0.4069
+random_learning_f1: 0.4713
+uncertainty_sampling_f1: 0.4639 (93 picked)
+total_learning_f1: 0.4753
+                                           state_key  ...   q_value
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.095227
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.090150
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.080279
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.078225
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.078219
+
+[5 rows x 3 columns]
+
+210/211q_learning_f1: 0.4813
+random_learning_f1: 0.5354
+uncertainty_sampling_f1: 0.4869 (156 picked)
+total_learning_f1: 0.5178
+                                           state_key  ...   q_value
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.105786
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.096733
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.091246
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.080567
+0  State_key(percent_of_class=0, duration=0, perc...  ...  0.080366
+
+[5 rows x 3 columns]
+

@@ -8,10 +8,10 @@ import time
 
 if __name__ == '__main__':
     ##### qlearning default params ######
-    increased_rd = 500 # increased randomness for n iters
+    increased_rd = 1 # increased randomness for n iters
     decrease_alpha = 0.0001
     iters = 100000
-    base_samples_amount = 400
+    base_samples_amount = 10
     epsilon = 0.9
     alpha = 0.2
     gamma = 0.95
