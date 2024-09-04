@@ -1,0 +1,165 @@
+952/1202q_learning_f1: 0.2149
+random_learning_f1: 0.2064
+uncertainty_sampling_f1: 0.2079 (781 picked)
+total_learning_f1: 0.2249
+                           state_key  action_key   q_value
+0  State_key(predict_proba=2, hit=0)           1  0.006739
+0  State_key(predict_proba=4, hit=1)           1  0.005374
+0  State_key(predict_proba=1, hit=1)           1  0.004885
+0  State_key(predict_proba=0, hit=0)           1  0.004239
+0  State_key(predict_proba=1, hit=0)           1  0.004061
+
+1870/2203q_learning_f1: 0.2468
+random_learning_f1: 0.2408
+uncertainty_sampling_f1: 0.2454 (1274 picked)
+total_learning_f1: 0.2518
+                           state_key  action_key   q_value
+0  State_key(predict_proba=0, hit=1)           1  0.006359
+0  State_key(predict_proba=0, hit=0)           1  0.006092
+0  State_key(predict_proba=1, hit=1)           1  0.006009
+0  State_key(predict_proba=1, hit=0)           1  0.004963
+0  State_key(predict_proba=5, hit=1)           1  0.004368
+
+2726/3204q_learning_f1: 0.2771
+random_learning_f1: 0.2820
+uncertainty_sampling_f1: 0.2710 (1729 picked)
+total_learning_f1: 0.2921
+                           state_key  action_key   q_value
+0  State_key(predict_proba=5, hit=1)           1  0.006179
+0  State_key(predict_proba=0, hit=1)           1  0.005437
+0  State_key(predict_proba=3, hit=0)           1  0.004286
+0  State_key(predict_proba=4, hit=1)           1  0.004195
+0  State_key(predict_proba=1, hit=0)           1  0.004056
+
+3646/4205q_learning_f1: 0.2993
+random_learning_f1: 0.2994
+uncertainty_sampling_f1: 0.2849 (2156 picked)
+total_learning_f1: 0.3045
+                           state_key  action_key   q_value
+0  State_key(predict_proba=3, hit=1)           1  0.004289
+0  State_key(predict_proba=0, hit=0)           1  0.004005
+0  State_key(predict_proba=0, hit=1)           1  0.003559
+0  State_key(predict_proba=2, hit=0)           1  0.002975
+0  State_key(predict_proba=1, hit=0)           1  0.002898
+
+4404/5206q_learning_f1: 0.3159
+random_learning_f1: 0.3080
+uncertainty_sampling_f1: 0.3031 (2521 picked)
+total_learning_f1: 0.3143
+                           state_key  action_key   q_value
+0  State_key(predict_proba=4, hit=1)           1  0.004860
+0  State_key(predict_proba=5, hit=1)           1  0.003854
+0  State_key(predict_proba=1, hit=1)           0  0.003706
+0  State_key(predict_proba=5, hit=0)           0  0.003176
+0  State_key(predict_proba=0, hit=0)           0  0.003143
+
+5277/6207q_learning_f1: 0.3114
+random_learning_f1: 0.3144
+uncertainty_sampling_f1: 0.3088 (2873 picked)
+total_learning_f1: 0.3240
+                           state_key  action_key   q_value
+0  State_key(predict_proba=3, hit=0)           0  0.003301
+0  State_key(predict_proba=1, hit=0)           1  0.003263
+0  State_key(predict_proba=5, hit=1)           1  0.003251
+0  State_key(predict_proba=5, hit=0)           0  0.003141
+0  State_key(predict_proba=0, hit=0)           0  0.003096
+
+5903/7208q_learning_f1: 0.3117
+random_learning_f1: 0.3188
+uncertainty_sampling_f1: 0.3079 (3189 picked)
+total_learning_f1: 0.3275
+                           state_key  action_key   q_value
+0  State_key(predict_proba=5, hit=0)           0  0.003187
+0  State_key(predict_proba=2, hit=1)           1  0.003178
+0  State_key(predict_proba=5, hit=1)           0  0.003103
+0  State_key(predict_proba=4, hit=0)           0  0.002850
+0  State_key(predict_proba=3, hit=0)           0  0.002753
+
+6215/8209q_learning_f1: 0.3183
+random_learning_f1: 0.3203
+uncertainty_sampling_f1: 0.3181 (3472 picked)
+total_learning_f1: 0.3300
+                           state_key  action_key   q_value
+0  State_key(predict_proba=5, hit=0)           0  0.002321
+0  State_key(predict_proba=0, hit=1)           1  0.001693
+0  State_key(predict_proba=3, hit=0)           0  0.001651
+0  State_key(predict_proba=1, hit=1)           0  0.001608
+0  State_key(predict_proba=3, hit=0)           1  0.001476
+
+6458/9210q_learning_f1: 0.3184
+random_learning_f1: 0.3149
+uncertainty_sampling_f1: 0.3151 (3769 picked)
+total_learning_f1: 0.3310
+                           state_key  action_key   q_value
+0  State_key(predict_proba=5, hit=0)           0  0.002060
+0  State_key(predict_proba=2, hit=1)           0  0.001821
+0  State_key(predict_proba=1, hit=0)           1  0.001342
+0  State_key(predict_proba=3, hit=0)           1  0.001285
+0  State_key(predict_proba=2, hit=0)           0  0.001280
+
+925/1202q_learning_f1: 0.2187
+random_learning_f1: 0.2104
+uncertainty_sampling_f1: 0.2228 (792 picked)
+total_learning_f1: 0.2241
+                           state_key  action_key   q_value
+0  State_key(predict_proba=1, hit=0)           1  0.003815
+0  State_key(predict_proba=5, hit=1)           1  0.003785
+0  State_key(predict_proba=3, hit=0)           1  0.003437
+0  State_key(predict_proba=1, hit=1)           1  0.002758
+0  State_key(predict_proba=4, hit=0)           1  0.002543
+
+1695/2203q_learning_f1: 0.2502
+random_learning_f1: 0.2380
+uncertainty_sampling_f1: 0.2630 (1297 picked)
+total_learning_f1: 0.2540
+                           state_key  action_key   q_value
+0  State_key(predict_proba=4, hit=0)           1  0.003350
+0  State_key(predict_proba=2, hit=0)           1  0.002584
+0  State_key(predict_proba=2, hit=1)           0  0.002562
+0  State_key(predict_proba=5, hit=1)           1  0.002501
+0  State_key(predict_proba=3, hit=1)           1  0.002281
+
+2486/3204q_learning_f1: 0.2795
+random_learning_f1: 0.2727
+uncertainty_sampling_f1: 0.2859 (1771 picked)
+total_learning_f1: 0.2839
+                           state_key  action_key   q_value
+0  State_key(predict_proba=2, hit=0)           1  0.003189
+0  State_key(predict_proba=4, hit=0)           1  0.002963
+0  State_key(predict_proba=4, hit=1)           1  0.001595
+0  State_key(predict_proba=3, hit=0)           1  0.001537
+0  State_key(predict_proba=5, hit=1)           1  0.001533
+
+3135/4205q_learning_f1: 0.2836
+random_learning_f1: 0.2890
+uncertainty_sampling_f1: 0.3025 (2236 picked)
+total_learning_f1: 0.3076
+                           state_key  action_key   q_value
+0  State_key(predict_proba=4, hit=0)           1  0.002463
+0  State_key(predict_proba=2, hit=1)           1  0.002059
+0  State_key(predict_proba=3, hit=0)           1  0.001883
+0  State_key(predict_proba=3, hit=1)           1  0.001599
+0  State_key(predict_proba=4, hit=1)           1  0.001557
+
+702/1202q_learning_f1: 0.1974
+random_learning_f1: 0.1915
+uncertainty_sampling_f1: 0.2274 (784 picked)
+total_learning_f1: 0.2241
+                           state_key  action_key   q_value
+0  State_key(predict_proba=1, hit=0)           1  0.002052
+0  State_key(predict_proba=4, hit=1)           0  0.001952
+0  State_key(predict_proba=5, hit=1)           0  0.001483
+0  State_key(predict_proba=0, hit=1)           0  0.001298
+0  State_key(predict_proba=2, hit=1)           0  0.000931
+
+653/1202q_learning_f1: 0.2071
+random_learning_f1: 0.1855
+uncertainty_sampling_f1: 0.2328 (793 picked)
+total_learning_f1: 0.2241
+                           state_key  action_key   q_value
+0  State_key(predict_proba=1, hit=1)           0  0.002805
+0  State_key(predict_proba=3, hit=0)           1  0.002307
+0  State_key(predict_proba=5, hit=1)           1  0.002303
+0  State_key(predict_proba=0, hit=0)           1  0.002225
+0  State_key(predict_proba=3, hit=1)           0  0.002069
+
