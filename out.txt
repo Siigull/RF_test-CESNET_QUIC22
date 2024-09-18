@@ -1,0 +1,13 @@
+964/1402q_learning_f1: 0.1851
+random_learning_f1: 0.1860
+uncertainty_sampling_f1: 0.2116 (1068 picked)
+total_learning_f1: 0.2084
+                                           state_key  ...   q_value
+0  State_key(predict_proba=4, hit=1, lof=2, novel...  ...  0.001253
+0  State_key(predict_proba=1, hit=0, lof=1, novel...  ...  0.001188
+0  State_key(predict_proba=1, hit=0, lof=0, novel...  ...  0.001082
+0  State_key(predict_proba=0, hit=0, lof=3, novel...  ...  0.001065
+0  State_key(predict_proba=3, hit=1, lof=0, novel...  ...  0.001034
+
+[5 rows x 3 columns]
+

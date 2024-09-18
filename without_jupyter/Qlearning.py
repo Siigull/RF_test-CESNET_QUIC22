@@ -155,7 +155,6 @@ class Q(QLearning):
             
         #     self.first_proba = False
 
-
         # end = time.time()
         # self.func_time += end - start
 
